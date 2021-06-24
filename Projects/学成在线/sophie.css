@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.w {
+    width: 1200px;
+    margin: auto;
+}
+body {
+    background-color: #f4f5f9;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+.header {
+    height: 100px;
+}
+.logo {
+    float: left;
+    width: 195px;
+    height: 38px;
+    margin: 25px 50px;
+}
+.nav ul {
+    float: left;
+}
+.nav ul li {
+    float: left;
+    /* 这个height到底是写在li的下面 还是a的下面？ */
+    height: 38px;
+    padding: 25px 15px;
+}
+.nav ul li a {
+    color: #333;
+    line-height: 38px;
+}
+.nav ul li a:hover {
+    color: blue;
+    /* 为什么鼠标放上去，直接就是在文字下面有个下划线呢？ */
+    border-bottom: 1px solid blue;
+}
+.search {
+    float: left;
+    width: 412px;
+    height: 38px;
+    margin: 25px 0;
+    /* 为什么这个距离感觉不太一样？ */
+    margin-left: 40px;
+}
+.search input {
+    /* input是否需要浮动呢？ */
+    width: 360px;
+    height: 100%;
+    border: 1px solid blue;
+}
+.search button {
+    /* 这个搜索按钮 为什么总是掉下去，只有把search的宽度改成412px的时候才上去， 是因为宽度不够吗 ？ */
+    float: right;
+    width: 50px;
+    height: 100%;
+    border: none;
+    background-color: skyblue;
+}
+.user {
+    float: left;
+    margin: 25px 25px;
+    width: 110px;
+    height: 38px;
+    line-height: 38px;
+}
+.profile {
+    float: left;
+    width: 38px;
+    height: 30px;
+    background-color: burlywood;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+.banner {
+    height: 420px;
+    background-color: #2a006c;
+}
+.content {
+    /* 因为不插入背景图了，所以图片有占位，需要用定位 */
+    position: relative;
+    height: 100%;
+}
+.father {
+    position: absolute;
+    top: 0;
+}
+.subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+.subnav ul li {
+    padding: 14px 5px;
+}
+.subnav ul li a {
+    font-size: 14px;
+    color: seashell;
+}
+.subnav ul li span {
+    color: aliceblue;
+    float: right
+}
+.timetable {
+    float: right;
+    width: 230px;
+    height: 300px;
+    background-color: white;
+}
+.timetable-hd {
+    width: 100%;
+    height: 48px;
+    background-color: skyblue;
+}
+.timetable-hd h3 {
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    color: seashell;
+}
+.timetable-bd ul li {
+    padding: 15px 10px;
+    /* 为什么这个下划线距离左右两侧没有一点空隙呢？ */
+    border-bottom: 1px solid grey;
+}
+.timetable-bd ul li p {
+    font-size: 12px;
+    color: grey;
+}
+.timetable-bd a {
+    display: block;
+    margin: 10px 10px;
+    width: 200px;
+    height: 35px;
+    border: 1px solid blue;
+    line-height: 35px;
+    text-align: center;
+}
+.course {
+    height: 50px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.course h3 {
+    float: left;
+    line-height: 50px;
+}
+.course ul {
+    float: left;
+}
+.course ul li {
+    float: left;
+}
+.course ul li a {
+    color: black;
+    line-height: 50px;
+    padding: 0 20px;
+    border-left: 1px solid grey;
+}
+.course .mod {
+    float: right;
+    line-height: 50px;
+}
+.box {
+    height: 560px;
+    background-color: skyblue;
+    margin-top: 20px;
+}
