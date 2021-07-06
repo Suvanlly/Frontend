@@ -14,6 +14,6 @@ const NotFound = () => {
       <NotFoundWrapper>😿Sorry, We couldn't find that city...</NotFoundWrapper>
     </Fragment>
   )
-}
+};
 
 export default NotFound;
