@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd';
@@ -12,6 +11,7 @@ class TodoList extends Component {
     this.state = store.getState()
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleStoreChange = this.handleStoreChange.bind(this)
+    this.handleBtnClick = this.handleBtnClick.bind(this)
     // 让组件订阅store的数据，只要store的数据发生变化，subscribe里面的函数就自动被执行
     store.subscribe(this.handleStoreChange)
     // console.log(store.getState())
@@ -25,7 +25,14 @@ class TodoList extends Component {
     }
     store.dispatch(action); // 把这个action传给store
     // 打印出input改变的值
-    console.log(e.target.value);
+    // console.log(e.target.value);
+  }
+
+  handleBtnClick() {
+    const action = {
+      type: 'add_todo_item'
+    }
+    store.dispatch(action);
   }
 
   handleStoreChange() {
@@ -44,7 +51,7 @@ class TodoList extends Component {
             style={{width: '300px', marginRight: '10px'}}
             onChange={this.handleInputChange}
           />
-          <Button type="primary">Submit</Button>
+          <Button type="primary" onClick={this.handleBtnClick}>Submit</Button>
         </div>
         <List
           style={{marginTop: '10px', width: '300px'}}
