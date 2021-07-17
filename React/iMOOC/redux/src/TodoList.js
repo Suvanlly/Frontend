@@ -10,14 +10,40 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = store.getState()
-    console.log(store.getState())
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleStoreChange = this.handleStoreChange.bind(this)
+    // 让组件订阅store的数据，只要store的数据发生变化，subscribe里面的函数就自动被执行
+    store.subscribe(this.handleStoreChange)
+    // console.log(store.getState())
+  }
+
+  handleInputChange(e) {
+    // 创建action，type里面描述做什么事（这里是告诉store改变input value），value就是改变成e.target.value
+    const action = {
+      type: 'change_input_value',
+      value: e.target.value
+    }
+    store.dispatch(action); // 把这个action传给store
+    // 打印出input改变的值
+    console.log(e.target.value);
+  }
+
+  handleStoreChange() {
+    // 当感知到store数据变化时，用getStore方法重新调取store里面的数据，
+    // 用setState替换掉当前的store里面的数据，这样组件的数据就和store里面同步
+    this.setState(store.getState());
   }
 
   render() {
     return (
       <div style={{marginTop: '10px', marginLeft: '10px'}}>
         <div>
-          <Input value={this.state.inputValue} placeholder='todo info' style={{width: '300px', marginRight: '10px'}}/>
+          <Input 
+            value={this.state.inputValue} 
+            placeholder='todo info' 
+            style={{width: '300px', marginRight: '10px'}}
+            onChange={this.handleInputChange}
+          />
           <Button type="primary">Submit</Button>
         </div>
         <List
