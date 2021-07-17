@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 const defaultState = {
-  inputValue: '123',
-  list: [1,2]
+  inputValue: '',
+  list: [1,2,3]
 }
 // Reducer相当于一个笔记本，state可以理解为整个store仓库里存储的数据（或者理解为之前的数据），action是当前要做的事
 // reducer可以接受state，但是绝不能修改state
@@ -22,6 +22,12 @@ export default (state = defaultState, action) => {
     // console.log(newState)
   }
 
+  if (action.type === 'delete_todo_item') {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState.list.splice(action.index, 1);
+    return newState;
+    // console.log(newState)
+  }
   // console.log(state, action);
   return state;
 }
