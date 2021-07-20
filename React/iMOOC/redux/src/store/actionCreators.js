@@ -1,4 +1,4 @@
-import { ADD_TODO_ITEM, CHANGE_INPUT_VALUE, DELETE_TODO_ITEM } from "./actionTypes";
+import { ADD_TODO_ITEM, CHANGE_INPUT_VALUE, DELETE_TODO_ITEM, INIT_LIST_ACTION } from "./actionTypes";
 
 // 将action放在actionCreators 统一管理，这样提高了代码的可维护性，并且前端自动化测试工具也会很方便
 
@@ -15,4 +15,9 @@ export const getAddItemAction = () => ({
 export const getDeleteItemAction = (index) => ({
   type: DELETE_TODO_ITEM,
   index
+});
+
+export const initListAction = (data) => ({
+  type: INIT_LIST_ACTION,
+  data
 });

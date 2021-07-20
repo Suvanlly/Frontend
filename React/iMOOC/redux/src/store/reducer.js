@@ -1,9 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './actionTypes';
+import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST_ACTION } from './actionTypes';
 
 const defaultState = {
   inputValue: '',
-  list: [1,2,3]
+  list: []
 }
 // Reducer相当于一个笔记本，state可以理解为整个store仓库里存储的数据（或者理解为之前的数据），action是当前要做的事
 // reducer可以接受state，但是绝不能修改state
@@ -29,6 +29,12 @@ export default (state = defaultState, action) => {
     newState.list.splice(action.index, 1);
     return newState;
     // console.log(newState)
+  }
+
+  if (action.type === INIT_LIST_ACTION) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState.list = action.data;
+    return newState;
   }
   // console.log(state, action);
   return state;

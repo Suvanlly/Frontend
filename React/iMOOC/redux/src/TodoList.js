@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import store from './store';
-import { getAddItemAction, getDeleteItemAction, getInputChangeAction } from './store/actionCreators'
+import { getAddItemAction, getDeleteItemAction, getInputChangeAction, initListAction } from './store/actionCreators'
 import TodoListUI from './TodoListUI';
+import axios from 'axios';
 
 class TodoList extends Component {
 
@@ -16,6 +17,16 @@ class TodoList extends Component {
     // 让组件订阅store的数据，只要store的数据发生变化，subscribe里面的函数就自动被执行
     store.subscribe(this.handleStoreChange)
     // console.log(store.getState())
+  }
+
+  componentDidMount() {
+    // Redux中发送异步请求获取数据
+    axios.get('https://www.fastmock.site/mock/ef583257e8a4a1667c21df6b42c8769f/getList/list')
+    .then((res) => {
+        const data = res.data;
+        const action = initListAction(data)
+        store.dispatch(action);
+    })
   }
 
   handleInputChange(e) {
