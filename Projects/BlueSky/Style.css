@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    line-height: 2;
+}
+h2 {
+    color: #66bfbf;
+    font-size: 40px;
+    font-weight: 400;
+}
+h3 {
+    color: #11999e;
+}
+p {
+    font-weight: 900;
+    color: #40514e;
+}
+a {
+    text-decoration: none;
+}
+hr {
+    border: dotted 8px #eaf6f6;
+    border-top: none;
+    width: 5%;
+    margin: 50px auto;
+    
+}
+/* Banner part begin */
+.banner {
+    position: relative;
+    background-color: #e4f9f5;
+    padding-top: 180px;
+}
+.banner h1 {
+    font-size: 90px;
+    font-family: 'Sacramento', cursive;
+    color: #66bfbf;
+}
+.banner p {
+    font-size: 20px ;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: #66bfbf;
+}
+.topcloud {
+    position: absolute;
+    right: 400px;
+    top: 80px;
+}
+.bottomcloud {
+    position: absolute;
+    left: 400px;
+    bottom: 300px;
+}
+
+/* Top container part begin */
+.top {
+    background-color: #fff
+}
+.profile {
+   margin: 50px auto;
+}
+.profile h2 {
+    padding: 20px 0;
+}
+/* skill part  */
+.skills h2 {
+    padding: 10px 0 40px;
+}
+.skill {
+    width: 50%;
+    margin: 30px auto 100px;
+    text-align: left;
+}
+.one img{
+     float: left;
+     padding-right: 50px;
+}
+.two img {
+    float: right;
+}
+/* contact me part */
+.contact {
+    margin: 50px auto;
+}
+.contact h2 {
+    padding: 10px 0;
+}
+.contact h3 {
+    padding: 10px 0;
+}
+.contact p {
+    width: 30%;
+    margin: auto;
+    padding: 10px 0 30px;
+}
+
+button {
+    background-color: #66bfbf;
+    width: 130px;
+    height: 30px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+}
+button a {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+}
+button a:hover {
+    color: cadetblue;
+}
+
+/* Bottom part begin */
+.bottom {
+    padding: 30px 0;
+    background-color: #66bfbf;
+}
+.bottom a {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 20px 20px;
+    color: #40514e;
+}
+.bottom a:hover {
+    color: #eaf6f6;
+}
+.bottom p {
+    padding: 20px 0;
+    font-size: 12px;
+    color: #eaf6f6;
+}
+
