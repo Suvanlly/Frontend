@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import store from './store';
-import { getAddItemAction, getDeleteItemAction, getInputChangeAction, initListAction } from './store/actionCreators'
+import { getAddItemAction, getDeleteItemAction, getInputChangeAction, getTodoList } from './store/actionCreators'
 import TodoListUI from './TodoListUI';
-import axios from 'axios';
 
 class TodoList extends Component {
 
@@ -20,13 +19,9 @@ class TodoList extends Component {
   }
 
   componentDidMount() {
-    // Redux中发送异步请求获取数据
-    axios.get('https://www.fastmock.site/mock/ef583257e8a4a1667c21df6b42c8769f/getList/list')
-    .then((res) => {
-        const data = res.data;
-        const action = initListAction(data)
-        store.dispatch(action);
-    })
+    // 因为有了thunk中间件，action不一定需要是object了，也可以是一个函数(getTodoList()返回的是一个函数)
+    const action = getTodoList();
+    store.dispatch(action);
   }
 
   handleInputChange(e) {

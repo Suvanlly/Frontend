@@ -1,11 +1,17 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './reducer';
+import thunk from 'redux-thunk';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__({}) : compose;
+const enhancer = composeEnhancers(
+  // 其实文档里面applyMiddleware括号里是展开运算符，所以不用写composeEnhancer，直接写thunk就行了
+  applyMiddleware(thunk),
+);
 // 把笔记本reducer作为参数传给store
 const store = createStore(
   reducer,
-  // 这句话意思是：如果window下面有这个变量，就执行这个变量对应的方法,有这个代码 inspector才可以用redux
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  enhancer
+  // thunk是个中间件，第二个也是中间件，意思是如果window下面有这个变量，就执行这个变量对应的方法,有这个代码 inspector才可以用redux
   );
 
 export default store;
