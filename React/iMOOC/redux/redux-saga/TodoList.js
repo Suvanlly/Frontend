@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import store from './store';
-import { getAddItemAction, getDeleteItemAction, getInputChangeAction, getTodoList } from './store/actionCreators'
+import { getAddItemAction, getDeleteItemAction, getInitList, getInputChangeAction } from './store/actionCreators'
 import TodoListUI from './TodoListUI';
 
 class TodoList extends Component {
@@ -19,8 +19,7 @@ class TodoList extends Component {
   }
 
   componentDidMount() {
-    // 因为有了thunk中间件，action不一定需要是object了，也可以是一个函数(getTodoList()返回的是一个函数)
-    const action = getTodoList();
+    const action = getInitList();
     store.dispatch(action);
   }
 
