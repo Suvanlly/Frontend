@@ -1,1 +1,1 @@
-Frontend Learning Notes;
+Frontend Learning Notes
