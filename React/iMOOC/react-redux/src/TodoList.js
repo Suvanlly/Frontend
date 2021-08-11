@@ -11,21 +11,22 @@ class TodoList extends Component {
 
   render() { 
     // console.log(this.props.list)
+    const { inputValue, changeInputValue, handleClick, list, handleDelete } = this.props;
     return (
       <div>
         <div>
           <input 
-            value={this.props.inputValue}
-            onChange={this.props.changeInputValue}
+            value={inputValue}
+            onChange={changeInputValue}
           />
-          <button onClick={this.props.handleClick}>
+          <button onClick={handleClick}>
             Submit
           </button>
         </div>
         <ul>
           {
-            this.props.list.map((item, index) => {
-              return <li onClick={() => this.props.handleDelete(index)} key={index}>{item}</li>
+            list.map((item, index) => {
+              return <li onClick={() => handleDelete(index)} key={index}>{item}</li>
             })
           }
         </ul>
