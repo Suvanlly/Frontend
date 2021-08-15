@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('./iconfont.ttf?t=1628916089537') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font:before {
+  content: "\e939";
+}
+
+.icon-search:before {
+  content: "\e612";
+}
+
+.icon-Pensyumaobi:before {
+  content: "\e708";
+}

@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8827127",
+      "name": "font",
+      "font_class": "font",
+      "unicode": "e939",
+      "unicode_decimal": 59705
+    },
+    {
+      "icon_id": "11269056",
+      "name": "search 搜索 查找",
+      "font_class": "search",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "14930333",
+      "name": "Pens羽毛笔",
+      "font_class": "Pensyumaobi",
+      "unicode": "e708",
+      "unicode_decimal": 59144
+    }
+  ]
+}
