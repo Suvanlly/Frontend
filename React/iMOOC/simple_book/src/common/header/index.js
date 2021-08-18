@@ -19,8 +19,8 @@ import {
 
 class Header extends Component {
 
-  getList(show) {
-    if(show) {
+  getList() {
+    if(this.props.focused) {
       return (
         <SearchInfo>
           <InfoTitle>
@@ -28,12 +28,11 @@ class Header extends Component {
             <InfoSwitch>Shuffle</InfoSwitch>
           </InfoTitle>
           <div>
-            <InfoItem>food</InfoItem>
-            <InfoItem>life</InfoItem>
-            <InfoItem>food</InfoItem>
-            <InfoItem>life</InfoItem>
-            <InfoItem>food</InfoItem>
-            <InfoItem>life</InfoItem>
+            {
+              this.props.list.map((item, index) => {
+                return <InfoItem key={index}>{item}</InfoItem>
+              })
+            }
           </div>
         </SearchInfo>
       )
@@ -67,7 +66,7 @@ class Header extends Component {
               ></NavSearch>
             </CSSTransition>
             <i className={this.props.focused ? 'focused iconfont': 'iconfont'}>&#xe612;</i>
-            {this.getList(this.props.focused)}
+            {this.getList()}
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -84,14 +83,16 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.get('header').get('focused')
     // 因为此时header下reducer里面的state已经变成immutable了，调用focused对象只能使用get(),不能像之前一样直接写state.header.focused
+    focused: state.get('header').get('focused'),
+    list: state.getIn(['header', 'list'])
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
+      dispatch(actionCreators.getList());
       const action = actionCreators.searchFocus();
       dispatch(action);
     },
