@@ -1,10 +1,17 @@
 {
-  "id": "",
-  "name": "",
+  "id": "2744681",
+  "name": "简书",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "401104",
+      "name": "spin-alt",
+      "font_class": "spinalt",
+      "unicode": "e852",
+      "unicode_decimal": 59474
+    },
     {
       "icon_id": "8827127",
       "name": "font",

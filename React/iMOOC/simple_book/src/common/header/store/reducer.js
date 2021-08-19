@@ -5,7 +5,10 @@ import { fromJS } from 'immutable';
 // immutable这个库可以把一个JS对象转化成immutable对象
 const defaultState = fromJS({
   focused: false,
-  list: []
+  mouseIn: false,
+  list: [],
+  page: 1,
+  totalPage: 1
 });
 
 export default (state = defaultState, action) => {
@@ -20,7 +23,19 @@ export default (state = defaultState, action) => {
     return state.set('focused', false);
   }
   if (action.type === actionTypes.CHANGE_LIST) {
-    return state.set('list', action.data);
+    return state.merge({
+      list: action.data,
+      totalPage: action.totalPage
+    });
+  }
+  if (action.type === actionTypes.MOUSE_ENTER) {
+    return state.set('mouseIn', true);
+  }
+  if (action.type === actionTypes.MOUSE_LEAVE) {
+    return state.set('mouseIn', false);
+  }
+  if (action.type === actionTypes.CHANGE_PAGE) {
+    return state.set('page', action.page);
   }
   return state;
 }

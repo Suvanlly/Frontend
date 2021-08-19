@@ -64,6 +64,16 @@ export const InfoTitle = styled.div`
 export const InfoSwitch = styled.span`
   float: right;
   font-size: 13px;
+  cursor: pointer;
+  .spin {
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-right: 2px;
+    transition: all .3s ease-in;
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
 `
 
 export const InfoItem = styled.a`
@@ -74,7 +84,7 @@ export const InfoItem = styled.a`
   line-height: 20px;
   padding: 0 5px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 12px;
   border: 1px solid #ddd;
 `
@@ -82,7 +92,7 @@ export const InfoItem = styled.a`
 export const SearchWrapper = styled.div`
   position: relative;
   float: left;
-  .iconfont {
+  .zoom {
     position: absolute;
     right: 5px;
     bottom: 5px;

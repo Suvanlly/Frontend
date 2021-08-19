@@ -1,14 +1,20 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('./iconfont.ttf?t=1628916089537') format('truetype');
+  font-family: "iconfont"; /* Project id 2744681 */
+  src: url('iconfont.woff2?t=1629291510272') format('woff2'),
+       url('iconfont.woff?t=1629291510272') format('woff'),
+       url('iconfont.ttf?t=1629291510272') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-spinalt:before {
+  content: "\e852";
 }
 
 .icon-font:before {
@@ -22,3 +28,4 @@
 .icon-Pensyumaobi:before {
   content: "\e708";
 }
+
