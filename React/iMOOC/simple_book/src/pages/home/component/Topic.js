@@ -1,30 +1,29 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { TopicItem, TopicWrapper } from '../style';
 
 class Topic extends Component {
   render() { 
     return (
       <TopicWrapper>
-        <TopicItem>
-          <img className="topic-pic"src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png' />
-          Hit Topics
-        </TopicItem>
-        <TopicItem>
-          <img className="topic-pic"src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png' />
-          Hit Topics
-        </TopicItem>
-        <TopicItem>
-          <img className="topic-pic"src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png' />
-          Hit Topics
-        </TopicItem>
-        <TopicItem>
-          <img className="topic-pic"src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png' />
-          Hit Topics
-        </TopicItem>
+        {
+          this.props.list.map((item) => {
+            return (
+              <TopicItem key={item.get('id')}>
+                <img className="topic-pic" src={item.get('imgUrl')} />
+                {item.get('title')}
+              </TopicItem>
+            )
+          })
+        }
       </TopicWrapper>
     );
   }
 }
- 
-export default Topic;
+
+const mapState = (state) => ({
+  list: state.get('home').get('topicList')
+});
+
+export default connect(mapState, null)(Topic);
