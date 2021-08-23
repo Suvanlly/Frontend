@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": [{
+      "id": 5,
+      "title": "Sydney lockdown extended with more restrictions",
+      "desc": "NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.",
+      "imgUrl": "https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1"    
+    },{
+      "id": 6,
+      "title": "NSW records 642 cases",
+      "desc": "NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.",
+      "imgUrl": "https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1"    
+    },{
+      "id": 7,
+      "title": "Sydney lockdown extended with more restrictions as NSW records 642 cases",
+      "desc": "NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.",
+      "imgUrl": "https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1"    
+    },{
+      "id": 8,
+      "title": "Sydney lockdown extended with more restrictions as NSW records 642 cases",
+      "desc": "NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.",
+      "imgUrl": "https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1"    
+    }]
+}

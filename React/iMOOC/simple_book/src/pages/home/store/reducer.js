@@ -1,57 +1,43 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { fromJS } from 'immutable';
+import * as actionTypes from './actionTypes';
 
 // immutable这个库可以把一个JS对象转化成immutable对象
 const defaultState = fromJS({
-  topicList: [{
-    id: 1,
-    title: 'Hit News',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png'
-  },{
-    id: 2,
-    title: 'Hit Topics',
-    imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/150px-BBC_News_2019.svg.png'
-  }],
-  articleList: [{
-    id: 1,
-    title: 'Sydney lockdown extended with more restrictions as NSW records 642 cases',
-    desc: 'NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.',
-    imgUrl: 'https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1'    
-  },{
-    id: 2,
-    title: 'Sydney lockdown extended with more restrictions as NSW records 642 cases',
-    desc: 'NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.',
-    imgUrl: 'https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1'    
-  },{
-    id: 3,
-    title: 'Sydney lockdown extended with more restrictions as NSW records 642 cases',
-    desc: 'NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.',
-    imgUrl: 'https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1'    
-  },{
-    id: 4,
-    title: 'Sydney lockdown extended with more restrictions as NSW records 642 cases',
-    desc: 'NSW Premier Gladys Berejiklian has extended the lockdown for Greater Sydney until the end of September after NSW recorded 642 new local cases and four deaths on Friday.',
-    imgUrl: 'https://newscorp.com/wp-content/uploads/2021/04/homepage-wallstreetjournal.jpg?w=1440&h=710&crop=1'    
-  }],
-  recommendList: [{
-    id: 1,
-    imgUrl: "http://chemtrol.com.au/wp-content/uploads/2018/05/latest-news-banner.jpg"
-  },{
-    id: 2,
-    imgUrl: "http://chemtrol.com.au/wp-content/uploads/2018/05/latest-news-banner.jpg"
-  }],
-  writerList: [{
-    id: 1,
-    title: "Recent News",
-    imgUrl:"https://t3.ftcdn.net/jpg/03/83/65/80/360_F_383658044_24fTwN8lRfekbM4qrQYyiFP59UK0IitA.jpg"
-  },{
-    id: 2,
-    title: "Outbreak News",
-    imgUrl:"https://t3.ftcdn.net/jpg/03/83/65/80/360_F_383658044_24fTwN8lRfekbM4qrQYyiFP59UK0IitA.jpg"
-  }]
+  topicList: [],
+  articleList: [],
+  recommendList: [],
+  writerList: [],
+  articlePage: 1,
+  showScroll: false
 });
 
-export default (state = defaultState, action) => {
+const changeHomeData = (state, action) => {
+  return state.merge({
+    topicList: fromJS(action.topicList),
+    articleList: fromJS(action.articleList),
+    recommendList: fromJS(action.recommendList),
+    writerList: fromJS(action.writerList)
+  })
+}
 
-  return state;
+const addHomeList = (state, action) => {
+  return state.merge({
+    'articleList': state.get('articleList').concat(action.list),
+    'articlePage': action.nextPage
+  })
+}
+
+export default (state = defaultState, action) => {
+  switch(action.type) {
+    case actionTypes.CHANGE_HOME_DATA:
+      return changeHomeData(state, action)
+    case actionTypes.ADD_HOME_LIST:
+      return addHomeList(state, action)
+    case actionTypes.TOGGLE_SCROLL_TOP:
+      return state.set('showScroll', action.show);
+
+    default:
+      return state;
+  }
 }

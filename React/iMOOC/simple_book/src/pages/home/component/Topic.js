@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { TopicItem, TopicWrapper } from '../style';
 
-class Topic extends Component {
+class Topic extends PureComponent {
   render() { 
     return (
       <TopicWrapper>

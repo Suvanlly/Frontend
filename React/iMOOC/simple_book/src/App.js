@@ -11,8 +11,8 @@ class App extends Component {
     return (
       // provider把store里面的数据都提供给了内部的header组件
       <Provider store={store}>
-        <Header />
         <BrowserRouter>
+          <Header />
           <Route path='/' exact component={Home}></Route>
           <Route path='/detail' exact component={Detail}></Route>
         </BrowserRouter>
