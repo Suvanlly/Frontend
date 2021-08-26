@@ -1,0 +1,15 @@
+import axios from 'axios';
+import * as actionTypes from './actionTypes';
+
+const changeDetail = (title, content) => ({
+  type:
+})
+
+export const getDetail = () => {
+  return (dispatch) => {
+    axios.get('/api/detail.json').then((res) => {
+      const result = res.data.data
+      dispatch(changeDetail(result.title, result.content))
+    })
+  }
+}

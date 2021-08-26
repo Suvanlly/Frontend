@@ -13,8 +13,13 @@ export const Header = styled.div`
   font-style: 34px;
   color: #333;
   font-weight: 700;
+  text-align: center;
 `
 
 export const Content = styled.div`
   color: #2f2f2f;
+  text-align: center;
+  img {
+    width: 100%;
+  }
 `
