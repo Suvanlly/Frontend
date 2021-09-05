@@ -23,7 +23,8 @@ class Header extends Component {
 
   getList() {
     const { focused, list, page, totalPage, mouseIn, handleMouseEnter, handleMouseLeave, handleChangePage } = this.props;
-    const newList = list.toJS();
+    // 把newList从immutable转成普通的js对象
+    const newList = list.toJS(); 
     const pageList = [];
 
     if (newList.length) {
@@ -67,7 +68,7 @@ class Header extends Component {
           <Logo/>
         </Link>
         <Nav>
-          <NavItem className='left active'>Home</NavItem>
+          <Link to='/'><NavItem className='left active'>Home</NavItem></Link>
           <NavItem className='left'>Download</NavItem>
           {
             login ? <NavItem onClick={logout} className='right'>Log out</NavItem> : <Link to='/login'><NavItem className='right'>Login</NavItem></Link>
@@ -115,7 +116,7 @@ const mapStateToProps = (state) => {
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn']),
     login: state.getIn(['login', 'login'])
-    // getIn 是啥意思 不太理解，为什么totalPage在header里面？
+    // getIn找到loginReducer里面的login
   }
 }
 
@@ -124,6 +125,7 @@ const mapDispatchToProps = (dispatch) => {
     handleInputFocus(list) {
       // 只有在List.size等于0的时候，也就是没有数据的时候，才请求数据；有数据则不请求
       (list.size === 0) && dispatch(actionCreators.getList());
+      // 上面代码意思是前者为true,直接执行后面的dispatch的function因为function一定为true
       const action = actionCreators.searchFocus();
       dispatch(action);
     },
@@ -161,4 +163,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+// 利用connect将header与Provider提供的大store连接起来，这样可以获取不同组件里面的数据，不用担心单向数据流父子组件传值问题了
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

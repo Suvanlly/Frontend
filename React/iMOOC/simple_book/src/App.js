@@ -11,10 +11,11 @@ import store from './store';
 class App extends Component {
   render() { 
     return (
-      // provider把store里面的数据都提供给了内部的header组件
+      // provider把store里面的combineReducer所有数据都提供给了内部的组件使用
       <Provider store={store}>
         <BrowserRouter>
-          <Header />
+          {/* 不建议把header写到App文件里，最好写到Home,Login,write每个page的render里面 */}
+          <Header /> 
           <Route path='/' exact component={Home}></Route>
           <Route path='/login' exact component={Login}></Route>
           <Route path='/write' exact component={write}></Route>

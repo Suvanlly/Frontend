@@ -29,7 +29,7 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   login(accountElem, passwordElem){
-    console.log(accountElem.value, passwordElem.value)
+    // console.log(accountElem.value, passwordElem.value)
     dispatch(actionCreators.login(accountElem.value, passwordElem.value))
   }
 })
