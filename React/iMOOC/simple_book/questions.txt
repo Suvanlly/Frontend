@@ -3,7 +3,7 @@
 
 3. common -> header -> index.js 46行，三个params是什么意思，109行往下都不太理解，connect的运行原理是什么？
 4. common -> header -> reducer.js -> 14行 action传进去是干什么，action.page是什么
-5. common -> header -> actionCreators -> 32行 getList这里是怎么运行的
+5. common -> header -> actionCreators -> 32行 getList这里是怎么运行的?
 
 6. pages -> home -> index.js -> 13行，不理解；34行，componentDidMount，componentWillUnmount, bindEvents具体什么作用？
    49行，state.getIn是啥意思？58行，为什么是document.documentElement?
