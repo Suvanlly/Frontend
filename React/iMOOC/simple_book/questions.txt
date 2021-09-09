@@ -12,6 +12,6 @@
 
 9. pages -> detail -> index.js -> 11行，this.props.title 而不是item.title? ；17行没看懂 ；最后一行with Router是什么意思？
 10.pages -> detail -> loadable.js -> 这个文件代码没看懂？
-11.pages -> detail -> actionCreators.js -> 12行，id这里没看懂
+11.pages -> detail -> actionCreators.js -> 12行，id这里没看懂?
 
 12.pages -> login -> index.js -> 14行-16行没看懂，33行不太懂； reducer.js 13/15行
