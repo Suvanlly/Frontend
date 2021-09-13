@@ -20,12 +20,11 @@ console.log(typeof null);
 let age = 30;
 age = 31;
 // let to declare variables that can change later, they are mutable
-
 const birthYear = 1991;
 // const declared variable cannot be changed
-
 var job = 'programmer';
 job = 'teacher';
+
 
 // Basic Operators
 // Assignment operators
@@ -59,6 +58,7 @@ console.log(`String
 multiple
 lines`);
 
+
 // If/Else Statement
 const age1 = 19;
 const isOldEnough = age1 >= 18;
@@ -83,3 +83,26 @@ if (birth <= 2000) {
   century = '21 century';
 }
 console.log(century)
+
+// Type Conversion / Coercion
+// Type conversion is when we manually convert from one to another
+const inputYear = '1991';
+const newInputYear = Number(inputYear);
+
+console.log(inputYear, newInputYear);
+console.log(inputYear + 18, newInputYear + 18)
+
+console.log(Number('Jonas')); //return NaN, means not a valid number
+console.log(typeof NaN); //number
+console.log(String(23)); //convert from number to string
+
+// Type coercion is when JS automatically converts types behind the scenes
+console.log('I am' + 23 + 'years old');
+console.log('23' + 10) //'2310', JS use '+' will convert number to str
+console.log('23' - 10) // 13, JS  use '-' will convert str to num
+console.log('24' / '2') // 12, '/' will convert str to num
+console.log('23' > '2') // true, '>' will convert str to num
+
+let n = '1' + 1; //'11' string
+n = n - 1; // '11' - 1 convert str to num
+console.log(n) //10
