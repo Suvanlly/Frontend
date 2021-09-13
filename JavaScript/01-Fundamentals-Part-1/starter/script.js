@@ -138,3 +138,25 @@ console.log('10' == 10) //true
 // '!==' strict not equal '!=' loose version
 console.log('10' != 10) //false
 console.log('10' !== 10) //true 
+
+
+// Logical Operators (And, Or)
+const hasLicense = true;
+const hasGoodVision = true;
+
+console.log(hasLicense && hasGoodVision); //true
+console.log(hasLicense || hasGoodVision); // true
+console.log(!hasLicense); //false
+
+if (hasLicense && hasGoodVision) {
+  console.log('You can drive');
+} else {
+  console.log('Do not drive!');
+}
+
+const isTired = true;
+if (hasLicense && hasGoodVision && !isTired) {
+  console.log('You can drive!');
+} else {
+  console.log('Someone else should drive');
+}
