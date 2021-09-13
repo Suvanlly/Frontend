@@ -182,3 +182,15 @@ switch (day) {
   default:
     console.log('not a valid day');
 }
+
+
+// Statements and Expressions
+// Expressions produce values eg.
+3 + 4
+1991
+true && false
+// Statements are like full sentences
+if (23 > 10) {
+  console.log('23 is bigger'); 
+//';' means a complete sentence, so it is statement
+}
