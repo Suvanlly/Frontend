@@ -38,5 +38,23 @@ x --;
 // Comparison operators
 const ageJonas = 5;
 const ageSarah = 10;
-console.log(ageJonas > ageSarah);
 // >, <, >=, <=
+console.log(ageJonas > ageSarah);
+
+
+// String and Template Literals
+const firstName = "Jonas";
+const jonas = "I'm " + firstName;
+console.log(jonas)
+// Template String
+const jonasNew = `I'm ${firstName}`
+console.log(jonasNew)
+console.log(`just a regular string`)
+// Quotes
+console.log('String with \n\
+multiple \n\
+line');
+// Template literals
+console.log(`String
+multiple
+lines`);
