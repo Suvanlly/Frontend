@@ -160,3 +160,25 @@ if (hasLicense && hasGoodVision && !isTired) {
 } else {
   console.log('Someone else should drive');
 }
+
+
+// The Switch Statement
+const day = 'friday';
+
+switch (day) {
+  case 'monday': // if day === 'monday'
+    console.log('It is monday');
+    break;
+  case 'tuesday':
+    console.log('it is tuesday');
+    break;
+  case 'wednesday':
+    console.log('it is wednesday');
+    break;
+  case 'thursday':
+  case 'friday': // if day === 'thursday' || day === 'friday'
+    console.log('it is thursday and friday');
+    break;
+  default:
+    console.log('not a valid day');
+}
