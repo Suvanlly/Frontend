@@ -128,3 +128,13 @@ if (height) {
 } else {
   console.log('height is not defined');
 }
+
+// Equality Operators == VS. ===
+// '===' is strict equal, it does not perform type coercion (true when both value and type are equal)
+console.log(10 === 10) // true
+console.log('10' === 10) //false
+// '==' is loose equality operator, it will perform type coercion automatically, but don't use it, it will bring a lot of bugs
+console.log('10' == 10) //true
+// '!==' strict not equal '!=' loose version
+console.log('10' != 10) //false
+console.log('10' !== 10) //true 
