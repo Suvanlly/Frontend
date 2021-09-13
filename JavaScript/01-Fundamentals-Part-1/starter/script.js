@@ -58,3 +58,28 @@ line');
 console.log(`String
 multiple
 lines`);
+
+// If/Else Statement
+const age1 = 19;
+const isOldEnough = age1 >= 18;
+
+if (isOldEnough) {
+  console.log('You can start driving licnese');
+}
+
+const age2 = 15;
+if (age2 >= 18) {
+  console.log('You can start driving licnese');
+} else {
+  const yearsLeft = 18 - age2;
+  console.log(`wait another ${yearsLeft} years`)
+}
+
+const birth = 2012;
+let century; //You have to define century here
+if (birth <= 2000) {
+  century = '20 century';
+} else {
+  century = '21 century';
+}
+console.log(century)
