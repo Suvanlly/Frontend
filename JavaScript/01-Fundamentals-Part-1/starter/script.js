@@ -106,3 +106,25 @@ console.log('23' > '2') // true, '>' will convert str to num
 let n = '1' + 1; //'11' string
 n = n - 1; // '11' - 1 convert str to num
 console.log(n) //10
+
+// Truthy and Falsy values
+// 5 falsy values: 0, '', undefined, null, NaN (They will return false if converted to a boolean)
+console.log(Boolean(0)); //false
+console.log(Boolean(undefined)); //false
+console.log(Boolean('Jonas')); //true
+console.log(Boolean({})); //true
+console.log(Boolean('')); //false
+
+const money = 100; // true
+if (money) {
+  console.log("money is converted to true");
+} else {
+  console.log("money is converted to false");
+}
+
+let height; // false, because height is not assigned a value
+if (height) {
+  console.log('height is defined');
+} else {
+  console.log('height is not defined');
+}
