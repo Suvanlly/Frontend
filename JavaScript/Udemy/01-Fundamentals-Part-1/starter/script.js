@@ -202,3 +202,8 @@ const age3 = 23;
 age3 >= 18 ? console.log('Wine') : console.log('Water');
 // because ternary operator is expression, it can put in the template literals
 console.log(`I can drink ${age3 >= 18 ? 'wine' : 'water'}`)
+
+// exercise, if bill between $50-300, tips is 15%; else tips is 20%
+const bill = 40;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, total value is ${bill + tip}`);
