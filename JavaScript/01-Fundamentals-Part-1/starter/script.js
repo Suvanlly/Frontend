@@ -194,3 +194,11 @@ if (23 > 10) {
   console.log('23 is bigger'); 
 //';' means a complete sentence, so it is statement
 }
+
+
+// The conditional (ternary) operator
+const age3 = 23;
+
+age3 >= 18 ? console.log('Wine') : console.log('Water');
+// because ternary operator is expression, it can put in the template literals
+console.log(`I can drink ${age3 >= 18 ? 'wine' : 'water'}`)
