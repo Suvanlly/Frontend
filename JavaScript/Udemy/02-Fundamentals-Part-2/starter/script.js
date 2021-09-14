@@ -17,6 +17,7 @@ console.log(juiceProcessor(4, 0));
 const appleJuice = juiceProcessor(1, 5);
 console.log(appleJuice);
 
+
 // Function Declarations VS Expressions
 // Function Declaration
 function calcAge1(birthYear) {
@@ -44,3 +45,18 @@ const yearsUntilRetirement = (birthYear3, firstName) => {
   return `${firstName} retires in ${retirement} years`;
 }
 console.log(yearsUntilRetirement(2010, 'Jonas'));
+
+
+// Function calling other Function
+function fruitPieces(fruit) {
+  return fruit * 4;
+}
+function fruitProcessor2(banana, pineapple) {
+  const bananaPieces = fruitPieces(banana);
+  const pineapplePieces = fruitPieces(pineapple);
+
+  const juice = `Juice with ${bananaPieces} piece of banana 
+  and ${pineapplePieces} piece of pineapple`;
+  return juice;
+}
+console.log(fruitProcessor2(2, 3));
