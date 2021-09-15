@@ -148,3 +148,40 @@ const newObjects = {
 console.log(newObjects.calcAge4()); // 25 (2021 - 1996)
 // newObjects calling the calcAge() method, so this refer to newObjects.
 console.log(newObjects.adultYears());
+
+
+// the For Loop
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`repetition ${rep} times`)
+};
+
+// looping an array
+const sophie = [
+  'Sophie',
+  'Sun',
+  25,
+  true,
+  'Developer'
+];
+const types = [];
+
+for (let i = 0; i < sophie.length; i++) {
+  console.log(sophie[i] , typeof sophie[i]);
+
+  types[i] = typeof sophie[i];
+}
+console.log(types);
+
+// continue and break
+console.log('--- ONLY STRINGS ---')
+for (let i = 0; i < sophie.length; i++) {
+  if (typeof sophie[i] !== 'string') continue;
+// continue means it will exit this line of iteration, won't execute next line
+  console.log(sophie[i], typeof sophie[i]);
+}
+console.log('--- BREAK WITH NUMBER ---')
+for (let i = 0; i < sophie.length; i++) {
+  if (typeof sophie[i] === 'number') break;
+// break will exit the whole loop when found type of number. Next item will not be iterated.
+  console.log(sophie[i], typeof sophie[i]);
+}
