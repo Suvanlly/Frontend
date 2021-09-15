@@ -60,3 +60,19 @@ function fruitProcessor2(banana, pineapple) {
   return juice;
 }
 console.log(fruitProcessor2(2, 3));
+
+
+// Arrays
+const friends = ['Michael', 'Steven', 'Peter'];
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends.length); //The length of this array
+console.log(friends[friends.length - 1]); //The last item in array
+
+friends[2] = 'Jay'; //mutate the last item in friends
+console.log(friends);
+
+const myName = 'Jonas';
+const mixArray = [myName, 'Hello', 20 - 3, friends];
+console.log(mixArray);
