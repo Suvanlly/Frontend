@@ -76,3 +76,31 @@ console.log(friends);
 const myName = 'Jonas';
 const mixArray = [myName, 'Hello', 20 - 3, friends];
 console.log(mixArray);
+
+
+// Array Operations
+const newFriends = ['Michael', 'Steven', 'Peter'];
+
+// Add elements
+const newLength = newFriends.push('Jay');
+console.log(newFriends);
+console.log(newLength); //4
+
+newFriends.unshift('John'); //add in the beginning of array
+console.log(newFriends);
+
+// Remove elements
+const popped = newFriends.pop();
+console.log(newFriends);
+console.log(popped);
+
+const shifted = newFriends.shift(); //remove the first item
+console.log(newFriends);
+console.log(shifted);
+
+// find an item in array
+console.log(newFriends.indexOf('Steven')); // 1
+console.log(newFriends.indexOf('Bob')); // -1
+
+console.log(newFriends.includes('Steven')); // true
+console.log(newFriends.includes('Bob')); // flase
