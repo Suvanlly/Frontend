@@ -224,3 +224,13 @@ while (dice !== 6) {
   dice = Math.ceil(Math.random() * 6);
   if (dice === 6) console.log(`Loop is end`);
 }
+
+// exercise Average calculation
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum / arr.length;
+}
+console.log(calcAverage([2, 5, 8]));
