@@ -179,9 +179,48 @@ for (let i = 0; i < sophie.length; i++) {
 // continue means it will exit this line of iteration, won't execute next line
   console.log(sophie[i], typeof sophie[i]);
 }
+
 console.log('--- BREAK WITH NUMBER ---')
 for (let i = 0; i < sophie.length; i++) {
   if (typeof sophie[i] === 'number') break;
 // break will exit the whole loop when found type of number. Next item will not be iterated.
   console.log(sophie[i], typeof sophie[i]);
+}
+
+// looping an array backwards
+const sophie1 = [
+  'Sophie',
+  'Sun',
+  25,
+  true,
+  'Developer'
+];
+
+for (let i = sophie1.length - 1; i >= 0; i--) {
+  console.log(i, sophie1[i]);
+}
+
+  // looping a loop inside a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`------Starting from exercise ${exercise}`);
+
+  for (let rep = 1; rep < 5; rep++) {
+    console.log(`${exercise}-${rep}`)
+  };
+}
+
+
+// The while loop
+let i = 1;
+while (i <= 5) {
+  console.log(`WHILE LOOP: ${i}`);
+  i++;
+}
+
+let dice = Math.ceil(Math.random() * 6);
+while (dice !== 6) {
+  console.log(`dice number is ${dice}`);
+  // rolling the dice again
+  dice = Math.ceil(Math.random() * 6);
+  if (dice === 6) console.log(`Loop is end`);
 }
