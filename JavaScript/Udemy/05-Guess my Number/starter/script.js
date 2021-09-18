@@ -3,9 +3,8 @@
 console.log(document.querySelector('.message').textContent);
 
 const secretNum = Math.ceil(Math.random() * 20);
-let score = 20; // state variable
+let score = 20; // state variable, can be used everywhere
 
-document.querySelector('.number').textContent = secretNum;
 // Events Listener
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -18,8 +17,10 @@ document.querySelector('.check').addEventListener('click', function () {
     // When player wins
   } else if (guess === secretNum) {
     document.querySelector('.message').textContent = '🥰 Correct Number!';
+    document.querySelector('.number').textContent = secretNum;
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+
     // When guess is too high
   } else if (guess > secretNum) {
     if (score > 1) {
@@ -43,4 +44,9 @@ document.querySelector('.check').addEventListener('click', function () {
     }
 
   }
+})
+
+// Click again to reset the page
+document.querySelector('.again').addEventListener('click', function () {
+
 })
