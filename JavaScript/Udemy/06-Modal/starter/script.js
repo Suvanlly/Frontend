@@ -22,5 +22,16 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
   btnsOpenModal[i].addEventListener('click', openModal);
 };
 
+// 在点击modal上面的close button和 外面的阴影时，都加上closeModal的function
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// 当modal显示的时候，加一个keydown event listener，按ESC可以退出  
+// keydown 只能给全局加event Listener，不能用querySelector给某元素加，当触发Keydown,把e作为argument传给function
+document.addEventListener('keydown', function(e) {
+  // console.log(e)
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    // 当按键按了Esc并且modal不包含hidden此ClassName, 也就是modal显示的时候，执行closeModal的function
+    closeModal();
+  }
+})
