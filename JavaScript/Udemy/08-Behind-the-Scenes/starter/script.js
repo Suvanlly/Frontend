@@ -37,3 +37,32 @@ function calcAge(birthYear) {
 // Global Scope
 const firstName = 'Jonas';
 calcAge(1990);
+
+
+
+// ---------- Hoisting and Temporary dead zone -----------
+
+// Hoisting with Variable
+console.log(me); // undefined, var will be hoisted with value of undefined
+console.log(job); // error: cannot access before initialization becasue it is in TDZ
+console.log(year); // error: const cannot be hoisted, TDZ between line 44 - line 50
+
+var me = 'Jonas';
+let job = 'teacher';
+const year = '1991';
+
+
+// Hoisting with functions
+console.log(addDecl(2, 3)); // 5, because function can be hoisted with actual function
+console.log(addExpr(2, 3)); // error: const within TDZ
+console.log(addArrow(2, 3)); // var is hoisted with undefined addArrow function
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+}
+
+var addArrow = (a, b) => a + b;
