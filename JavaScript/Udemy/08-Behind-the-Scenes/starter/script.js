@@ -66,3 +66,37 @@ const addExpr = function (a, b) {
 }
 
 var addArrow = (a, b) => a + b;
+
+
+// ---------- This key word -----------
+console.log(this); 
+// Window object
+
+const calcAge1 = function (birth) {
+  console.log(2020 - birth);
+  console.log(this); // undefined, because calcAge function doesn't called by anyone
+};
+calcAge1(1990);
+
+const calcAgeArrow = birth => {
+  console.log(2020 - birth);
+  console.log(this); // Window object, because arrow function doesn't have it own this keyword, it can only use its parent one's
+};
+calcAgeArrow(1990);
+
+
+const jonas = {
+  year: 1990,
+  calcAge: function () {
+    console.log(this); // jonas call了这个function, 所以jonas整体就是this指向的对象
+    console.log(2020 - this.year); // 2020 - 1990 = 30
+  },
+};
+jonas.calcAge();
+
+const matilda = {
+  year: 2017,
+}
+
+matilda.calcAge = jonas.calcAge; // now matilda also has calcAge function
+matilda.calcAge();
