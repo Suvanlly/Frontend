@@ -100,3 +100,25 @@ const matilda = {
 
 matilda.calcAge = jonas.calcAge; // now matilda also has calcAge function
 matilda.calcAge();
+
+
+// ---------- Primitive VS. Reference Values -----------
+// primitive values
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+// Reference values example
+const me = {
+  name: 'Jonas',
+  age: 30
+};
+const friend = me;
+friend.age = 27;
+
+console.log('Friend:', friend);
+// { name: 'Jonas', age: 27 }
+console.log('Me:', me);
+// { name: 'Jonas', age: 27 }
