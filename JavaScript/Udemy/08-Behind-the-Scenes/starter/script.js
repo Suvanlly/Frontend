@@ -68,7 +68,7 @@ const addExpr = function (a, b) {
 var addArrow = (a, b) => a + b;
 
 
-// ---------- This key word -----------
+// ----------------- This key word ------------------
 console.log(this); 
 // Window object
 
@@ -113,8 +113,9 @@ console.log(oldAge); // 30
 // Reference values example
 const me = {
   name: 'Jonas',
-  age: 30
+  age: 30,
 };
+
 const friend = me;
 friend.age = 27;
 
@@ -122,3 +123,17 @@ console.log('Friend:', friend);
 // { name: 'Jonas', age: 27 }
 console.log('Me:', me);
 // { name: 'Jonas', age: 27 }
+
+
+// Copying objects
+const me2 = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const meCopy = Object.assign({}, me2);
+meCopy.name = 'Davis';
+console.log(me2);
+// { name: 'Jonas', age: '30' }
+console.log(meCopy);
+// { name: 'Davis', age: '30' }
