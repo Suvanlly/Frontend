@@ -1,5 +1,6 @@
 'use strict';
 
+// -------------------- Default parameters ----------------------
 const bookings = [];
 
 const createBooking = function (
@@ -7,7 +8,7 @@ const createBooking = function (
   numPassengers = 1,
   price = 199
 
-  // 上面是default的值
+  // 上面是default parameters的值
 ) {
   const booking = {
     flightNum,
