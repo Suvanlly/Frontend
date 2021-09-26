@@ -53,4 +53,4 @@ console.log(flight);
 // flight和 flightNumber是 primitive value 指向不同的address
 console.log(jonas);
 // {name: "Mr. Jonas", passport: 123456}
-// jonas是一个object，function里面的name被改动，指向同一个address,所以jonas本身也变了
+// jonas是一个object，function里面的name被改动，指向同一个address,所以jonas本身也变了.
