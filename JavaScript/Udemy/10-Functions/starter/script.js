@@ -34,7 +34,7 @@ const flight = 'LH234';
 const jonas = {
   name: 'Jonas',
   passport: 123456,
-};
+}
 
 const checkIn = function (flightNumber, passenger) {
   flightNumber = 'LH999';
