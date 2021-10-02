@@ -45,7 +45,7 @@ const checkIn = function (flightNumber, passenger) {
   } else {
     alert('Wrong passport');
   }
-}
+};
 
 checkIn(flight, jonas);
 console.log(flight);
