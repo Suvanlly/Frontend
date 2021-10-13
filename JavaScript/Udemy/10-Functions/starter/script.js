@@ -48,7 +48,7 @@ const checkIn = function (flightNumber, passenger) {
 };
 
 checkIn(flight, jonas);
-console.log(flight);
+console.log(flight)
 // LH234
 // flight和 flightNumber是 primitive value 指向不同的address.
 console.log(jonas)
