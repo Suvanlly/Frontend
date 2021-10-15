@@ -54,3 +54,33 @@ console.log(flight);
 console.log(jonas);
 // {name: "Mr. Jonas", passport: 123456}
 // jonas是一个object，function里面的name被改动，指向同一个address,所以jonas本身也变了
+
+
+// --------------- Higher order functions: functions accepting callback function ------------------
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('JavaScript is the best!', oneWord);
+transformer('JavaScript is the best!', upperFirstWord);
+
+
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log('Hi');
+};
+document.body.addEventListener('click', high5);
+['Jonas', 'Martha', 'Adam'].forEach(high5);
