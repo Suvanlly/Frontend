@@ -60,11 +60,14 @@ console.log(jonas);
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
+  // 把输入的string里所有的空格都替换成无空格，也就是把空格都缩进，并且转成小写字母
 };
 
 const upperFirstWord = function (str) {
   const [first, ...others] = str.split(' ');
+  // 把输入的str用empty str分开，然后将第一个单词和剩下的单词分离成一个新array: [Javascript, is, the, best, !]
   return [first.toUpperCase(), ...others].join(' ');
+  // 第一个单词每个字母都变成大写，并且用join将后面的单词用空格连在一起
 };
 
 // Higher-order function
@@ -75,7 +78,13 @@ const transformer = function (str, fn) {
 };
 
 transformer('JavaScript is the best!', oneWord);
+// Original string: JavaScript is the best!
+// Transformed string: javascriptisthebest!
+// Transformed by: oneWord
 transformer('JavaScript is the best!', upperFirstWord);
+// Original string: JavaScript is the best!
+// Transformed string: JAVASCRIPT is the best!
+// Transformed by: upperFirstWord
 
 
 // JS uses callbacks all the time
