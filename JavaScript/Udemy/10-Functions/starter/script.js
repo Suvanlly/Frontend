@@ -100,9 +100,19 @@ document.body.addEventListener('click', high5);
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
+    // 'Hey'是greeting的实参，'Jonas'是name的实参
   };
 };
 
 const greeterHey = greet('Hey');
+// greet('Hey')直接返回101行另一个function并赋值给greeterHey这个变量
 greeterHey('Jonas');
+// Hey Jonas
 greeterHey('Steven');
+// Hey Steven
+
+greet('Hello')('Jonas'); // 二合一
+// Hello Jonas
+
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+greetArrow('Hi')('Jonas');
