@@ -146,8 +146,21 @@ const jetstar = {
 const book = qantas.book;
 
 // book(23, 'Sarah Williams'); 这样写不行，因为 this的指向是undefined
-book.call(jetstar, 23, 'Sarah Williams');
+
+// Call Method
+book.call(jetstar, 23, 'Sarah Williams'); // set 'this' keyword point to jetstar
 console.log(jetstar);
 
 book.call(qantas, 239, 'Mary Cooper');
 console.log(qantas);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+// Apply method
