@@ -116,3 +116,22 @@ greet('Hello')('Jonas'); // 二合一
 
 const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 greetArrow('Hi')('Jonas');
+
+// ----------------- The Call and Apply Methods ---------------------
+const qantas = {
+  airline: 'qantas',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({flight: `${this.iataCode}${flightNum}`, name});
+  },
+};
+
+qantas.book(239, 'Jonas');
+// Jonas booked a seat on qantas flight LH239
+qantas.book(635, 'Sophie');
+// Sophie booked a seat on qantas flight LH635
+console.log(qantas);
