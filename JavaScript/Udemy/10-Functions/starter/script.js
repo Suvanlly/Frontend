@@ -135,3 +135,16 @@ qantas.book(239, 'Jonas');
 qantas.book(635, 'Sophie');
 // Sophie booked a seat on qantas flight LH635
 console.log(qantas);
+
+
+const jetstar = {
+  name: 'Jetstar',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = qantas.book;
+
+// book(23, 'Sarah Williams'); 这样写不行，因为 this的指向是undefined
+book.call(jetstar, 23, 'Sarah Williams');
+console.log(jetstar);
