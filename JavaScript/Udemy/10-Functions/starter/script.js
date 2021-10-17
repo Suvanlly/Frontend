@@ -148,3 +148,6 @@ const book = qantas.book;
 // book(23, 'Sarah Williams'); 这样写不行，因为 this的指向是undefined
 book.call(jetstar, 23, 'Sarah Williams');
 console.log(jetstar);
+
+book.call(qantas, 239, 'Mary Cooper');
+console.log(qantas);
