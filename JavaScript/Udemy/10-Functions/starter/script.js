@@ -163,9 +163,34 @@ const swiss = {
 book.call(swiss, 583, 'Mary Cooper');
 console.log(swiss);
 
+
 // Apply method
 const flightData = [583, 'George Cooper'];
 book.apply(swiss, flightData);
 console.log(swiss);
 // Apply 用的不多，call method更常用一些
 book.call(swiss, ...flightData);
+
+
+// Bind Method
+const bookQan = book.bind(qantas);
+const bookJet = book.bind(jetstar);
+const bookSwi = book.bind(swiss);
+
+bookQan(23, 'Steven Williams');
+
+const bookQan23 = book.bind(qantas, 23);
+bookQan23('William');
+bookQan23('Martin');
+
+// With Event Listeners
+qantas.planes = 300;
+qantas.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+// 如果不加 bind(qantas),this的指向会是eventListener attach的东西，也就是‘Buy new plane’这个button
+document.querySelector('.buy').addEventListener('click', qantas.buyPlane.bind(qantas));
