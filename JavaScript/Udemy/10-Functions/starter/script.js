@@ -95,7 +95,7 @@ document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
 
 
-// --------------- Functions Returning Functions ------------------
+// ----------------------------- Functions Returning Functions ------------------------------
 
 const greet = function (greeting) {
   return function (name) {
@@ -117,7 +117,7 @@ greet('Hello')('Jonas'); // 二合一
 const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 greetArrow('Hi')('Jonas');
 
-// ----------------- The Call and Apply Methods ---------------------
+// ---------------------------- The Call and Apply Methods ----------------------------
 const qantas = {
   airline: 'qantas',
   iataCode: 'LH',
@@ -146,6 +146,7 @@ const jetstar = {
 const book = qantas.book;
 
 // book(23, 'Sarah Williams'); 这样写不行，因为 this的指向是undefined
+
 
 // Call Method
 book.call(jetstar, 23, 'Sarah Williams'); // set 'this' keyword point to jetstar
@@ -195,14 +196,16 @@ qantas.buyPlane = function () {
 // 如果不加 bind(qantas),this的指向会是eventListener attach的东西，也就是‘Buy new plane’这个button
 document.querySelector('.buy').addEventListener('click', qantas.buyPlane.bind(qantas));
 
+
 // Partial application
 const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.1, 200));
 
+ // null指的this，这里this没有所以是null，0.23指的是rate，后面还可以写第三个值 value
 const addVAT = addTax.bind(null, 0.23);
 // addVAT = value => value + value * 0.23;
 
-console.log(addVAT(100));
+console.log(addVAT(100)); //相当于addTax.bind(null, 0.23, 100)
 console.log(addVAT(23));
 
 const addTaxRate = function (rate) {
@@ -212,3 +215,11 @@ const addTaxRate = function (rate) {
 };
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
+
+
+// ---------------------------- Coding Challenge ----------------------------
+const poll = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  answers: new Array(4).fill(0),
+};
