@@ -117,6 +117,7 @@ greet('Hello')('Jonas'); // 二合一
 const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 greetArrow('Hi')('Jonas');
 
+
 // ---------------------------- The Call and Apply Methods ----------------------------
 const qantas = {
   airline: 'qantas',
@@ -250,3 +251,17 @@ const poll = {
 // poll.registerNewAnswer();
 
 document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+
+
+// ------------------------- Immediately Invoked Function Expression (IIFE) ----------------------------
+// a Function that disappears right after it called once
+
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+  // data privacy, this data cannot be accessed from outside function scope
+})();
+
+(() => console.log('This will ALSO never run again'))
+();
