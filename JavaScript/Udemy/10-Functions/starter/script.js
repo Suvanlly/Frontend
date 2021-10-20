@@ -265,3 +265,17 @@ document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer
 
 (() => console.log('This will ALSO never run again'))
 ();
+
+// ----------------------------- Closures 闭包 ---------------------------------
+
+// Closure makes a function remember all the variables that existed at the function's birthplace
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
