@@ -82,3 +82,5 @@ console.log(arr.slice(-1)); // ['e']
 console.log(arr.slice(1, -2)); // ['b', 'c']
 console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e']
 console.log([...arr]); // ['a', 'b', 'c', 'd', 'e']
+
+// SPLICE
