@@ -84,3 +84,12 @@ console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e']
 console.log([...arr]); // ['a', 'b', 'c', 'd', 'e']
 
 // SPLICE
+arr.slice(-1); // 把数组中的最后一个删除，并产生一个新数组
+console.log(arr); // ['a', 'b', 'c', 'd'] 
+arr.slice(1, 2);
+console.log(arr); // ['a', 'd']
+
+// REVERSE
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j']
+console.log(arr2) // ['f', 'g', 'h', 'i', 'j']
