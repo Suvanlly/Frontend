@@ -68,7 +68,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // ---------------------------- Simple Array Method -----------------------------------
@@ -100,4 +99,24 @@ console.log(letters); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 console.log([...arr, ...arr2]); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
 // JOIN
-console.log(letters.join(' - '));
+console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
+
+
+// ---------------------------- Looping Arrays (forEach) -----------------------------------
+const movements = [200, 400, -100, 2000, -300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdraw ${Math.abs(movement)}`);
+  }
+}
+
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdraw ${Math.abs(movement)}`);
+  }
+}); 
