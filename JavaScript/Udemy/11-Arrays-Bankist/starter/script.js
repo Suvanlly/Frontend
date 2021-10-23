@@ -103,20 +103,21 @@ console.log(letters.join(' - ')); // a - b - c - d - e - f - g - h - i - j
 
 
 // ---------------------------- Looping Arrays (forEach) -----------------------------------
+
 const movements = [200, 400, -100, 2000, -300];
 
-for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
   if (movement > 0) {
-    console.log(`You deposited ${movement}`);
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
   } else {
-    console.log(`You withdraw ${Math.abs(movement)}`);
+    console.log(`Movement ${i + 1}: You withdraw ${Math.abs(movement)}`);
   }
 }
 
-movements.forEach(function (movement) {
+movements.forEach(function (movement, index, arr) {
   if (movement > 0) {
-    console.log(`You deposited ${movement}`);
+    console.log(`Movement ${index + 1}: You deposited ${movement}`);
   } else {
-    console.log(`You withdraw ${Math.abs(movement)}`);
+    console.log(`Movement ${index + 1}: You withdraw ${Math.abs(movement)}`);
   }
 }); 
