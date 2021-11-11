@@ -30,9 +30,9 @@ class Login extends Component {
     // how: replace this.state.password by e.target.value
     const inputPassword = e.target.value;
     // console.log(e.target.value);
-    this.setState(() => ({
+    this.setState({
       password: inputPassword,
-    }));
+    });
 
     // setInterval
   }
