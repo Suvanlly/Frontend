@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Form = styled.form`
+  border: 1px solid red;
   width: 500px;
   height: 300px;
   display: flex;
@@ -14,7 +15,7 @@ const FormItem = styled.div`
   margin: 10px 0;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   width: 100px;
   height: 30px;
   margin-left: 110px;
