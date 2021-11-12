@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-function App() {
+const Form = styled.form`
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const FormItem = styled.div`
+  margin: 10px 0;
+`;
+
+const Button = styled.div`
+  width: 100px;
+  height: 30px;
+  margin-left: 110px;
+`;
+
+const Error = styled.p`
+  color: red;
+`;
+export const validateInput = (str = "") => str.includes("@");
+
+function App({ handleSubmit }) {
+  const [formData, setFormData] = useState({});
+
+  const handleOnChange = ({ target: { name, value } }) =>
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Form name="login-form" onSubmit={handleSubmit}>
+      <FormItem>
+        <label htmlFor="email">Email:</label>
+        <input id="email" name="email" onChange={handleOnChange} />
+      </FormItem>
+      {formData.email && !validateInput(formData.email) ? (
+        <Error>Email not valid</Error>
+      ) : null}
+      <FormItem>
+        <label htmlFor="password">Password:</label>
+        <input name="password" type="password" />
+      </FormItem>
+      <Button role="button">submit</Button>
+    </Form>
   );
 }
 
