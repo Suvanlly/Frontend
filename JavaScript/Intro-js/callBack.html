@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<h2>JavaScript Functions</h2>
+<h2>JavaScript Callbacks</h2>
 
 <p>Do a calculation and then display the result.</p>
 
@@ -12,13 +12,14 @@ function myDisplayer(some) {
   document.getElementById("demo").innerHTML = some;
 }
 
-function myCalculator(num1, num2) {
+function myCalculator(num1, num2, myCallback) {
   let sum = num1 + num2;
-  return sum;
+  myCallback(sum);
 }
 
-let result = myCalculator(5, 5);
-myDisplayer(result);
+/* Using a callback, you could call the calculator function(myCalculator) with a callback
+and let the calculator function run the callback after the calculator is finished */ 
+myCalculator(5, 5, myDisplayer);
 </script>
 
 </body>
