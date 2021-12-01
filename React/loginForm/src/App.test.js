@@ -19,5 +19,17 @@ describe("Test login form", () => {
     expect(passwordInput.value).toMatch("");
   });
 
-  test("should allow entering a username", () => {});
+  test("login form should allow entering a username", () => {
+    const { getByTestId } = render(<Login />);
+    const usernameInput = getByTestId("username");
+    fireEvent.change(usernameInput, { target: { value: "test" } });
+    expect(usernameInput.value).toMatch("test");
+  });
+
+  test("login form should allow entering a password", () => {
+    const { getByTestId } = render(<Login />);
+    const passwordInput = getByTestId("password");
+    fireEvent.change(passwordInput, { target: { value: "12345" } });
+    expect(passwordInput.value).toMatch("12345");
+  });
 });
