@@ -1,9 +1,15 @@
 import React from "react";
+import { shallow } from "enzyme";
 import { render, fireEvent } from "@testing-library/react";
-import App, { validateInput } from "./App";
+import "../enzymeConfig";
+import Login from "./component/Login/Login";
 
-test("login form should be in the document", () => {
-  const component = render(<App />);
-  const inputNode = component.getByText("Email:");
-  expect(inputNode).toBeInTheDocument();
+describe("Test login form", () => {
+  test("username check", () => {
+    const wrapper = shallow(<Login />);
+    wrapper
+      .find('input[type="text"]')
+      .simulate("change", { target: { name: "username", value: "sophie" } });
+    expect(wrapper.state("username")).toEqual("sophie");
+  });
 });
