@@ -32,4 +32,13 @@ describe("Test login form", () => {
     fireEvent.change(passwordInput, { target: { value: "12345" } });
     expect(passwordInput.value).toMatch("12345");
   });
+
+  test("submit button should be able to submit form", () => {
+    // 将jest.fn()赋值给onSubmit，并且把submitHandler作为props传给Login这个组件
+    const onSubmit = jest.fn();
+    const { getByTestId } = render(<Login submitHandler={onSubmit} />);
+    const submitForm = getByTestId("login-form");
+    fireEvent.submit(submitForm);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
+  });
 });

@@ -26,10 +26,7 @@ class Login extends Component {
   }
 
   passwordInputHandler(e) {
-    // goal: password inputbox will show the input value from user
-    // how: replace this.state.password by e.target.value
     const inputPassword = e.target.value;
-    // console.log(e.target.value);
     this.setState({
       password: inputPassword,
     });
@@ -61,7 +58,7 @@ class Login extends Component {
   render() {
     return (
       <InputWrap>
-        <form data-testid="login-form" onSubmit={this.submitHandler}>
+        <form data-testid="login-form" onSubmit={this.props.submitHandler}>
           <label>Username:</label>
           <Input
             type="text"

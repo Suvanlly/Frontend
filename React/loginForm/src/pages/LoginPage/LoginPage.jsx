@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import Header from '../../component/Header/Header';
-import Login from '../../component/Login/Login';
+import React, { Component } from "react";
+import Header from "../../component/Header/Header";
+import Login from "../../component/Login/Login";
 
 class LoginPage extends Component {
-  render() { 
+  render() {
     return (
       <>
-        <Header/>
-        <Login/>
+        <Header />
+        <Login />
       </>
-    )
+    );
   }
 }
- 
+
 export default LoginPage;
