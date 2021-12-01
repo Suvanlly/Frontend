@@ -1,15 +1,23 @@
 import React from "react";
-import { shallow } from "enzyme";
 import { render, fireEvent } from "@testing-library/react";
-import "../enzymeConfig";
 import Login from "./component/Login/Login";
+import "../setupTest";
 
 describe("Test login form", () => {
-  test("username check", () => {
-    const wrapper = shallow(<Login />);
-    wrapper
-      .find('input[type="text"]')
-      .simulate("change", { target: { name: "username", value: "sophie" } });
-    expect(wrapper.state("username")).toEqual("sophie");
+  test("login form should be in the document", () => {
+    const component = render(<Login />);
+    const loginForm = component.getByTestId("login-form");
+    expect(loginForm).toBeInTheDocument();
   });
+
+  test("loginform should display a blank username and password inputbox", () => {
+    const { getByTestId } = render(<Login />);
+    const usernameInput = getByTestId("username");
+    expect(usernameInput.value).toMatch("");
+
+    const passwordInput = getByTestId("password");
+    expect(passwordInput.value).toMatch("");
+  });
+
+  test("should allow entering a username", () => {});
 });

@@ -61,10 +61,11 @@ class Login extends Component {
   render() {
     return (
       <InputWrap>
-        <form onSubmit={this.submitHandler}>
+        <form data-testid="login-form" onSubmit={this.submitHandler}>
           <label>Username:</label>
           <Input
             type="text"
+            data-testid="username"
             // make input username value appear on the input box
             value={this.state.username}
             // whenever user type something inside input box, onChange event will be executed
@@ -73,6 +74,7 @@ class Login extends Component {
           <label>Password</label>
           <Input
             type="password"
+            data-testid="password"
             value={this.state.password}
             onChange={this.passwordInputHandler}
           />
