@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import Header from '../../component/Header/Header';
+import React, { Component } from "react";
+import Header from "../../component/Header/Header";
+import { Background, Title } from "../HomePage/styles/HomePage";
 
 class HelpCenter extends Component {
-  render() { 
+  render() {
     return (
-      <>
-        <Header/>
-        <div>
-          This is Help Center
-        </div>
-      </>
-    )
+      <Background>
+        <Header />
+        <Title>This is Help Center</Title>
+      </Background>
+    );
   }
 }
- 
+
 export default HelpCenter;

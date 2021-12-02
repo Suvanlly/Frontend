@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import Header from '../../component/Header/Header';
+import React, { Component } from "react";
+import Header from "../../component/Header/Header";
+
+import { Background, Title } from "./styles/HomePage";
 
 class HomePage extends Component {
-  render() { 
+  render() {
     return (
-      <>
-        <Header/>
-        <div>
-          This is Home page
-        </div>
-      </>
-    )
+      <Background>
+        <Header />
+        <Title>This is Home page</Title>
+      </Background>
+    );
   }
 }
- 
+
 export default HomePage;
