@@ -18,9 +18,6 @@ export const Input = styled.input`
   border-radius: 5px;
   border: 1px solid #dfbdfa;
 `;
-export const Message = styled.p`
-  color: red;
-`;
 export const Button = styled.button`
   margin: 10px 25px;
   box-shadow: inset 0px 1px 0px 0px #dcecfb;
