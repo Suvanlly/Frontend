@@ -3,7 +3,7 @@ import axios from "axios";
 import { Input, InputWrap, Button, Label } from "./styles/login";
 import { Link } from "react-router-dom";
 
-class Login extends Component {
+class LoginHooks extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,4 +88,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginHooks;

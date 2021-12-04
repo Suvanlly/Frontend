@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../component/Header/Header";
-import Login from "../../component/Login/Login";
+import LoginHooks from "../../component/Login/LoginHooks";
 import { Background } from "../HomePage/styles/HomePage";
 
 class LoginPage extends Component {
@@ -8,7 +8,7 @@ class LoginPage extends Component {
     return (
       <Background>
         <Header />
-        <Login />
+        <LoginHooks />
       </Background>
     );
   }
