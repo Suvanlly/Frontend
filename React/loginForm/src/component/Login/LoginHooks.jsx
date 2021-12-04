@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Input, InputWrap, Button, Label } from "./styles/login";
-import { Link } from "react-router-dom";
 
 class LoginHooks extends Component {
   constructor(props) {
@@ -17,8 +16,6 @@ class LoginHooks extends Component {
   }
 
   usernameInputHandler(e) {
-    // goal: username inputbox will show the input value from user
-    // how: replace this.state.username by e.target.value
     const inputUsername = e.target.value;
     // console.log(e.target.value);
     this.setState({
@@ -45,7 +42,7 @@ class LoginHooks extends Component {
     };
     axios
       .post(
-        "https://phtest-a5012-default-rtdb.firebaseio.com/data.json",
+        "https://loginform-fd027-default-rtdb.firebaseio.com/data.json",
         formValue
       )
       .then(function (response) {
@@ -59,7 +56,7 @@ class LoginHooks extends Component {
   render() {
     return (
       <InputWrap>
-        <form data-testid="login-form" onSubmit={this.props.submitHandler}>
+        <form data-testid="login-form" onSubmit={this.submitHandler}>
           <Label htmlFor="username">Username:</Label>
           <Input
             type="text"
@@ -79,9 +76,9 @@ class LoginHooks extends Component {
             onChange={this.passwordInputHandler}
           />
           <Button type="submit">Submit</Button>
-          <Link to="/">
-            <Button>Cancel</Button>
-          </Link>
+          <Button>
+            <a href="/">Cancel</a>
+          </Button>
         </form>
       </InputWrap>
     );

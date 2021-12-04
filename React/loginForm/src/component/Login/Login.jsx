@@ -45,7 +45,7 @@ class Login extends Component {
     };
     axios
       .post(
-        "https://phtest-a5012-default-rtdb.firebaseio.com/data.json",
+        "https://loginform-fd027-default-rtdb.firebaseio.com/data.json",
         formValue
       )
       .then(function (response) {
@@ -59,7 +59,7 @@ class Login extends Component {
   render() {
     return (
       <InputWrap>
-        <form data-testid="login-form" onSubmit={this.props.submitHandler}>
+        <form data-testid="login-form" onSubmit={this.submitHandler}>
           <Label htmlFor="username">Username:</Label>
           <Input
             type="text"
