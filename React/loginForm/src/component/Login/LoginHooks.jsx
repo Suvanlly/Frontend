@@ -1,19 +1,9 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Input, InputWrap, Button, Label } from "./styles/login";
 
-class LoginHooks extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-    };
-
-    this.usernameInputHandler = this.usernameInputHandler.bind(this);
-    this.passwordInputHandler = this.passwordInputHandler.bind(this);
-    this.submitHandler = this.submitHandler.bind(this);
-  }
+const LoginHooks = () => {
+  
 
   usernameInputHandler(e) {
     const inputUsername = e.target.value;
