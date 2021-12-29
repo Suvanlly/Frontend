@@ -10,7 +10,8 @@ const LoginHooks = () => {
 
   // const { username, password } = formData;
 
-  const onChange = (e) => {
+  const changeInputHandler = (e) => {
+    // console.log(e.target.name);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -20,10 +21,14 @@ const LoginHooks = () => {
   const submitHandler = (event) => {
     // event.preventDeafault(): prevent submiting the form until formValue assigned
     event.preventDefault();
+    const newData = {
+      username: formData.username,
+      password: formData.password,
+    };
     axios
       .post(
         "https://loginform-fd027-default-rtdb.firebaseio.com/data.json",
-        formData
+        newData
       )
       .then(function (response) {
         console.log(response);
@@ -43,8 +48,9 @@ const LoginHooks = () => {
           data-testid="username"
           // make input username value appear on the input box
           value={formData.username}
+          name="username"
           // whenever user type something inside input box, onChange event will be executed
-          onChange={onChange}
+          onChange={changeInputHandler}
         />
         <Label htmlFor="password">Password:</Label>
         <Input
@@ -52,7 +58,8 @@ const LoginHooks = () => {
           id="password"
           data-testid="password"
           value={formData.password}
-          onChange={onChange}
+          name="password"
+          onChange={changeInputHandler}
         />
         <Button type="submit">Submit</Button>
         <Button>
