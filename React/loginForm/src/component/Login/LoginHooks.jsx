@@ -8,23 +8,22 @@ const LoginHooks = () => {
     password: "",
   });
 
-  const { username, password } = formData;
+  // const { username, password } = formData;
 
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  submitHandler = (event) => {
+  const submitHandler = (event) => {
     // event.preventDeafault(): prevent submiting the form until formValue assigned
     event.preventDefault();
-    const formValue = {
-      // 这里的username和password都已经更新过了吗？是用户输入的最新的值吗？
-      username: this.state.username,
-      password: this.state.password,
-    };
     axios
       .post(
         "https://loginform-fd027-default-rtdb.firebaseio.com/data.json",
-        formValue
+        formData
       )
       .then(function (response) {
         console.log(response);
@@ -36,14 +35,14 @@ const LoginHooks = () => {
 
   return (
     <InputWrap>
-      <form data-testid="login-form" onSubmit={this.submitHandler}>
+      <form data-testid="login-form" onSubmit={submitHandler}>
         <Label htmlFor="username">Username:</Label>
         <Input
           type="text"
           id="username"
           data-testid="username"
           // make input username value appear on the input box
-          value={username}
+          value={formData.username}
           // whenever user type something inside input box, onChange event will be executed
           onChange={onChange}
         />
@@ -52,7 +51,7 @@ const LoginHooks = () => {
           type="password"
           id="password"
           data-testid="password"
-          value={password}
+          value={formData.password}
           onChange={onChange}
         />
         <Button type="submit">Submit</Button>
