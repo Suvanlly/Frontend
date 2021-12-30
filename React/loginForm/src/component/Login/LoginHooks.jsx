@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Input, InputWrap, Button, Label } from "./styles/login";
+import { Link } from "react-router-dom";
 
 const LoginHooks = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +64,7 @@ const LoginHooks = () => {
         />
         <Button type="submit">Submit</Button>
         <Button>
-          <a href="/">Cancel</a>
+          <Link to="/">Cancel</Link>
         </Button>
       </form>
     </InputWrap>
