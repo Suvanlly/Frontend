@@ -8,6 +8,7 @@ const LoginHooks = () => {
     username: "",
     password: "",
   });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // const { username, password } = formData;
 
