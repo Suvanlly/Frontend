@@ -2,20 +2,27 @@ import React, { useState, useEffect } from "react";
 
 export default function UseEffectDemo() {
   const [resourceType, setResourceType] = useState("posts");
+  const [items, setItems] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
   };
 
-  // This empty array lead to onMount because it only happens the first time you render it, it won't change later
+  // This empty array lead to onMount because it only happens the first time you render it, it won't change later between different renders
   useEffect(() => {
     console.log("onMount");
   }, []);
 
   useEffect(() => {
-    // whenever resource type changed, it will execute console.log
+    // whenever resource type changed, it will execute console.log "Resource type changed!"
     console.log("Resource type changed!");
+  }, [resourceType]);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => setItems(json));
   }, [resourceType]);
 
   useEffect(() => {
@@ -31,6 +38,9 @@ export default function UseEffectDemo() {
         <button onClick={() => setResourceType("comments")}>Comments</button>
       </div>
       <h1>{resourceType}</h1>
+      {items.map((item) => {
+        return <pre>{JSON.stringify(item)}</pre>;
+      })}
     </>
   );
 }
