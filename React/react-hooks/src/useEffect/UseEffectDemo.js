@@ -14,6 +14,11 @@ export default function UseEffectDemo() {
   }, []);
 
   useEffect(() => {
+    // whenever resource type changed, it will execute console.log
+    console.log("Resource type changed!");
+  }, [resourceType]);
+
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, []);
 
