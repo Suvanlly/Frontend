@@ -17,6 +17,10 @@ export default function UseEffectDemo() {
   useEffect(() => {
     // whenever resource type changed, it will execute console.log "Resource type changed!"
     console.log("Resource type changed!");
+    // Clean up code: Whenever useEffect rendered / Component unMounted, return code rendered first to clean up what we did last time
+    return () => {
+      console.log("Clean up resouce type");
+    };
   }, [resourceType]);
 
   useEffect(() => {
