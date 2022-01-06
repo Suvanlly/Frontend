@@ -9,9 +9,10 @@ export default function UseEffectDemo() {
     setWindowWidth(window.innerWidth);
   };
 
-  // This empty array lead to onMount because it only happens the first time you render it, it won't change later between different renders
+  // This empty array [] lead to onMount as it only happens the first time you render it, it won't change later between different renders
   useEffect(() => {
     console.log("onMount");
+    // useEffect will run only one time with empty []
   }, []);
 
   useEffect(() => {
