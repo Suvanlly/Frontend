@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import LoginHooks from "./component/Login/LoginHooks";
+import LoginHooks, { submitHandler } from "./component/Login/LoginHooks";
 import "../setupTest";
 
 describe("Test login form", () => {
@@ -37,8 +37,8 @@ describe("Test login form", () => {
     // 将jest.fn()赋值给onSubmit，并且把submitHandler作为props传给Login这个组件
     const onSubmit = jest.fn();
     const { getByTestId } = render(<LoginHooks submitHandler={onSubmit} />);
-    const submitForm = getByTestId("login-form");
-    fireEvent.submit(submitForm);
+    const buttonNode = getByTestId("button");
+    fireEvent.submit(buttonNode);
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
 });

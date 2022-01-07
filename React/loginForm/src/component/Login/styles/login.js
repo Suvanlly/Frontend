@@ -39,3 +39,7 @@ export const Button = styled.button`
     background-color: #80b5ea;
   }
 `;
+
+export const LogoutText = styled.h2`
+  text-align: center;
+`;
