@@ -52,18 +52,34 @@ It can't be accessible outside the particular block.
 */
 
 // Example 1: accessing the let variable outside the function block
-let a = 10;
+
 function f() {
   if (true) {
     let b = 9;
-    console.log(b);
+    console.log(b); // 9
   }
-  console.log(b);
+  // b is only accessiable in "if" block
+  console.log(b); // reference error: b is not defined
 }
 f();
 
-console.log(a);
+// ----------------------------------------------------------------------------------------------------
+
+// Example 2: User cannot re-declare the variable defined with 'let' keyword but can update it.
+let a = 10;
+
+let a = 8; // this is not allowed
+
+a = 9; // this is allowed
+
+console.log(a); // Syntax error: 'a' has already been declared
 
 // ----------------------------------------------------------------------------------------------------
 
-// ----------------------------------------------------------------------------------------------------
+// Example 3: Users can declare the variable with the same name in different blocks using 'let'
+let a = 10;
+if (true) {
+  let a = 8;
+  console.log(a); // 8
+}
+console.log(a); // 10
