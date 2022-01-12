@@ -83,3 +83,25 @@ if (true) {
   console.log(a); // 8
 }
 console.log(a); // 10
+
+// ----------------------------------------------------------------------------------------------------
+
+// Example 3: If users use the let variable before the declaration, it will return an error
+console.log(a);
+let a = 10;
+// Reference error: cannot access 'a' before initialization
+
+// ----------------------------------------------------------------------------------------------------
+/* Const
+Scope: Block scoped.
+And user can not update it
+*/
+
+// Example 1: accessing the let variable outside the function block
+const a = 10;
+function f() {
+  a = 9;
+  console.log(a);
+}
+f();
+// TypeError: Assignment to constant variable
