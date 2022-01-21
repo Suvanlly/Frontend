@@ -1,154 +1,256 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8"> <!--声明编码，否则会出现乱码-->
-	<title> HTML Basic notes</title> <!-- 网页标签页上的标题 -->
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <!--声明编码，否则会出现乱码-->
+    <title>HTML Basic notes</title>
+    <!-- 网页标签页上的标题 -->
+  </head>
 
-<body>
+  <body>
+    <!--这是标题标签-->
+    <h1>这是标题标签</h1>
 
-<!--这是标题标签-->
-<h1>这是标题标签</h1> 
+    <p>This is a <strong>Janpanese</strong> Restaurant</p>
+    <!--这是段落标签，p标签可以直接换行,和字体加粗效果-->
+    <p>And it located in <strong>MQ Shopping Centre</strong></p>
+    <!-- strong是让字体加粗 -->
 
-	<P>This is a <strong>Janpanese</strong> Restaurant</P> 
-	<!--这是段落标签，p标签可以直接换行,和字体加粗效果-->
-	<p>And it located in <strong>MQ Shopping Centre</strong></p>
-	<!-- strong是让字体加粗 -->
+    <div>div是一个没有语义的标签，它就是一个大盒子，一行只能放一个</div>
+    <br />
+    <span>span标签是个小盒子 一行可以多个span</span>
 
-<div>div是一个没有语义的标签，它就是一个大盒子，一行只能放一个</div> <br>
-<span>span标签是个小盒子 一行可以多个span</span>
+    <!--插入图片-->
+    <h2>如何插入图片</h2>
+    <img src="sophie.png" title="this is me" height="300" /> <br />
+    <!--title是提示文本,height按比例缩放图片,br是换行标签-->
 
-<!--插入图片-->
-<h2>如何插入图片</h2> 
-<img src = "sophie.png" title="this is me" height="300"/> <br> 
-<!--title是提示文本,height按比例缩放图片,br是换行标签-->
+    <!--插入一个超链接-->
+    <h2>关于超链接</h2>
+    <a href="http://www.google.com.au" target="_blank"> GOOGLE</a> <br />
+    <!--target打开页面的方式，_self当前窗口打开，_blank新窗口打开此链接-->
 
-<!--插入一个超链接-->
-<h2>关于超链接</h2>
-<a href="http://www.google.com.au" target="_blank"> GOOGLE</a> <br> 
-<!--target打开页面的方式，_self当前窗口打开，_blank新窗口打开此链接-->
+    <a href="内部链接.html" target="_blank"> 内部链接</a> <br />
+    <!--插入内部链接-->
 
-<a href="内部链接.html" target="_blank"> 内部链接</a> <br> <!--插入内部链接-->
+    <a href="#"> 空链接 </a> <br />
+    <!-- 插入空链接 -->
 
-<a href="#"> 空链接 </a> <br> <!-- 插入空链接 -->
+    <a href="#maodian">插入锚点链接</a>
+    <!-- 插入锚点链接 -->
 
-<a href="#maodian">插入锚点链接</a> <!-- 插入锚点链接 -->
+    <h2>插入表格</h2>
+    <table
+      align="Center"
+      border="1"
+      cellspacing="0"
+      cellpadding="10"
+      width="300"
+    >
+      <!--align=Center可以让整个表格居中显示-->
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+      <tr>
+        <td>Sophie</td>
+        <td>16</td>
+        <td>Female</td>
+      </tr>
+      <tr>
+        <td>Amy</td>
+        <td>18</td>
+        <td>Female</td>
+      </tr>
+      <tr>
+        <td>Lucy</td>
+        <td>20</td>
+        <td>Female</td>
+      </tr>
+    </table>
+    <!-- 表格标签是用来展示数据的，tr(table row)是代表每一行，td是每个单元格，th是表头会加粗文字居中显示-->
 
-<h2>插入表格</h2>
-<table align="Center" border="1" cellspacing="0" cellpadding="10" width="300">  
-<!--align=Center可以让整个表格居中显示-->
-	<tr> <th>姓名</th> <th>年龄</th> <th>性别</th> </tr>
-	<tr> <td>Sophie</td> <td>16</td> <td>Female</td> </tr>
-	<tr> <td>Amy</td> <td>18</td> <td>Female</td> </tr>
-	<tr> <td>Lucy</td> <td>20</td> <td>Female</td> </tr>
-</table>
-<!-- 表格标签是用来展示数据的，tr(table row)是代表每一行，td是每个单元格，th是表头会加粗文字居中显示-->
+    <h2>特殊字符</h2>
+    <!-- 特殊字符 空格和大于小于号 -->
+    <table
+      align="Center"
+      border="1"
+      width="200"
+      cellpadding="10"
+      cellspacing="0"
+    >
+      <thead>
+        <tr>
+          <th>特殊字符举例</th>
+        </tr>
+      </thead>
+      <!-- 这里使用了thead标签 -->
+      <tbody>
+        <tr>
+          <td>你 &nbsp;好</td>
+        </tr>
+        <!--nbsp是空格 -->
+        <tr>
+          <td>2 &gt; 1</td>
+        </tr>
+        <!--gt代表greater than -->
+        <tr>
+          <td>1 &lt; 2</td>
+        </tr>
+        <!--lt代表less than -->
+      </tbody>
+    </table>
 
-<h2>特殊字符</h2> <!-- 特殊字符 空格和大于小于号 -->
-<table align="Center" border="1" width="200" cellpadding="10" cellspacing="0">
-	<thead><tr><th>特殊字符举例</th></tr></thead>
-	<!-- 这里使用了thead标签 -->
-	<tbody>
-	<tr><td>你 &nbsp;好</td></tr> <!--nbsp是空格 -->
-	<tr><td>2 &gt; 1</td></tr> <!--gt代表greater than -->
-	<tr><td>1 &lt; 2</td> </tr> <!--lt代表less than -->
-	</tbody>
-</table>
+    <h2>合并单元格</h2>
+    <br />
+    原始表格
+    <table
+      align="Center"
+      border="1"
+      cellspacing="0"
+      cellpadding="10"
+      width="200"
+    >
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
-<h2>合并单元格</h2> <br>
-原始表格
-<table align="Center" border="1" cellspacing="0" cellpadding="10" width="200">
-	<tr> <td></td> <td></td> <td></td> </tr>
-	<tr> <td></td> <td></td> <td></td> </tr>
-	<tr> <td></td> <td></td> <td></td> </tr>
-</table>
+    <h4>跨行合并</h4>
+    <!-- 跨第二行和第三行 根据行上列左，在第二行最左边输入rowspan，因为跨两行所以2 -->
+    <table
+      align="Center"
+      border="1"
+      cellspacing="0"
+      cellpadding="10"
+      width="200"
+    >
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
-<h4>跨行合并</h4>
-<!-- 跨第二行和第三行 根据行上列左，在第二行最左边输入rowspan，因为跨两行所以2 -->
-<table align="Center" border="1" cellspacing="0" cellpadding="10" width="200">
-	<tr> <td></td> <td></td> <td></td> </tr>
-	<tr> <td rowspan="2"></td> <td></td> <td></td> </tr>
-	<tr> <td></td> <td></td> </tr>
-</table>
+    <h4>跨列合并</h4>
+    <!-- 跨第二列和第三列 根据行上列左，在第一行第二列输入colspan，因为跨两列所以2，同时记得删除第一行第三列-->
+    <table
+      align="Center"
+      border="1"
+      cellspacing="0"
+      cellpadding="10"
+      width="200"
+    >
+      <tr>
+        <td></td>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
 
-<h4>跨列合并</h4>
-<!-- 跨第二列和第三列 根据行上列左，在第一行第二列输入colspan，因为跨两列所以2，同时记得删除第一行第三列-->
-<table align="Center" border="1" cellspacing="0" cellpadding="10" width="200">
-	<tr> <td></td> <td colspan="2"></td> </tr>
-	<tr> <td></td> <td></td> <td></td> </tr>
-	<tr> <td></td> <td></td> <td></td> </tr>
-</table>
+    <h2 id="maodian">锚点链接</h2>
+    <!-- 锚点链接是可以点击链接以后 快速到达指定位置的一个链接 见第32行 -->
 
-<h2 id="maodian">锚点链接</h2>
-<!-- 锚点链接是可以点击链接以后 快速到达指定位置的一个链接 见第32行 -->
+    <h2>无序列表</h2>
+    <ul>
+      <li>姓名</li>
+      <li>年龄</li>
+      <li>性别</li>
+    </ul>
 
-<h2>无序列表</h2>
-<ul>
-	<li>姓名</li>
-	<li>年龄</li>
-	<li>性别</li>
-</ul>
+    <h2>有序列表：成绩排名</h2>
+    <ol>
+      <li>小红：100</li>
+      <li>小王：97</li>
+      <li>小民：90</li>
+    </ol>
 
-<h2>有序列表：成绩排名</h2>
-<ol>
-	<li>小红：100</li>
-	<li>小王：97</li>
-	<li>小民：90</li>
-</ol>
+    <h2>自定义列表</h2>
+    <dl>
+      <dt>服务支持</dt>
+      <dd>售后政策</dd>
+      <dd>自助服务</dd>
+      <dd>相关下载</dd>
+    </dl>
 
-<h2>自定义列表</h2>
-<dl>
-	<dt>服务支持</dt>
-	<dd>售后政策</dd>
-	<dd>自助服务</dd>
-	<dd>相关下载</dd>
-</dl>
+    <h2>表单标签之表单元素input</h2>
+    <form action="xxx.php" method="get">
+      <!-- text是文本框，用户可以在里面输入任何文字 -->
+      用户名：<input type="text" name="username" />
+      <!-- password是密码框，用户看不到输入的内容, maxlength代表最大字符长度-->
+      密码：<input type="password" name="pwd" maxlength="6" /> <br />
+      <!-- radio是单选按钮，可以实现多选 -->
+      <!-- name是表单元素的名字 若让radio实现多选一的效果 必须有相同的名字 -->
+      性别：男<input type="radio" name="gender" /> 女<input
+        type="radio"
+        name="gender"
+      />
+      <br />
+      <!-- checkbox是复选框，可以实现多选 -->
+      爱好：吃饭<input type="checkbox" name="hobby" /> 睡觉
+      <input type="checkbox" name="hobby" /> 刷剧
+      <input type="checkbox" name="hobby" /> <br />
+      <!-- Radio单选按钮和checkbox复选框可以设置checked属性，当页面打开时就默认选中这个按钮 -->
+      公司条款：同意<input type="radio" checked="checked" /> <br />
+      <!-- submit是提交按钮，点击就可以把表单信息发送给后台，可以通过value来修改按钮显示名称 -->
+      <input type="submit" value="提交" /> <br />
+      <!-- reset可以重新还原表单初始状态 -->
+      <input type="reset" value="重新填写" /> <br />
+      <!-- 普通按钮，后期结合js使用 -->
+      <input type="button" value="输入验证码" /> <br />
+      <!-- 文件域 上传文件使用 -->
+      <input type="file" />
+    </form>
 
-<h2>表单标签之表单元素input</h2>
-<form action="xxx.php" method="get">
-	<!-- text是文本框，用户可以在里面输入任何文字 -->
-	用户名：<input type="text" name="username"> 
-	<!-- password是密码框，用户看不到输入的内容, maxlength代表最大字符长度-->
-	密码：<input type="password" name="pwd" maxlength="6"> <br>
-	<!-- radio是单选按钮，可以实现多选 -->
-	<!-- name是表单元素的名字 若让radio实现多选一的效果 必须有相同的名字 -->
-	性别：男<input type="radio" name="gender"> 女<input type="radio"name="gender"> <br>
-	<!-- checkbox是复选框，可以实现多选 -->
-	爱好：吃饭<input type="checkbox" name="hobby"> 睡觉 <input type="checkbox" name="hobby"> 刷剧 <input type="checkbox" name="hobby"> <br>
-	<!-- Radio单选按钮和checkbox复选框可以设置checked属性，当页面打开时就默认选中这个按钮 -->
-	公司条款：同意<input type="radio" checked="checked"> <br>
-	<!-- submit是提交按钮，点击就可以把表单信息发送给后台，可以通过value来修改按钮显示名称 -->
-	<input type="submit" value="提交"> <br>
-	<!-- reset可以重新还原表单初始状态 -->
-	<input type="reset" value="重新填写"> <br>
-	<!-- 普通按钮，后期结合js使用 -->
-	<input type="button" value="输入验证码"> <br>
-	<!-- 文件域 上传文件使用 -->
-	<input type="file">
-</form>
+    <h2>表单元素之select下拉列表</h2>
+    <form>
+      籍贯
+      <select>
+        <option>北京</option>
+        <option selected="selected">上海</option>
+        <!-- selected是默认选中项 -->
+        <option>深圳</option>
+        <option>广州</option>
+      </select>
+    </form>
 
-<h2>表单元素之select下拉列表</h2>
-<form>
-籍贯
-<select>
-	<option>北京</option>
-	<option selected="selected">上海</option>
-	<!-- selected是默认选中项 -->
-	<option>深圳</option>
-	<option>广州</option>
-
-</select>
-</form>
-
-<h2>表单元素：textarea文本域</h2>
-<form>
-	<textarea>
+    <h2>表单元素：textarea文本域</h2>
+    <form>
+      <textarea>
 		在文本域里可以创建多行文本输入框
-	</textarea>
-</form>
-
-
-
-
-</body>
+	</textarea
+      >
+    </form>
+  </body>
 </html>
