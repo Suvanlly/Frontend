@@ -3,6 +3,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: brown;
     text-align: center;
+    margin: 20px auto;
 }
 .padding-100 {
     padding: 100px;
@@ -10,4 +11,10 @@
 
 .setPink {
     background-color: pink;
+}
+
+.setBorder {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
 }

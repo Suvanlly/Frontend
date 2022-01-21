@@ -2,8 +2,21 @@
 $("h1,h2,h3,h4,h5").addClass("big-title");
 $("a").addClass("padding-100");
 
-// How many ways to add color and style to all the div?
-$("div").addClass("big-title");
+//面试题： How many ways to add color and style to all the div?
+
+$("div").addClass("big-title setBorder");
+
+// Change all div to red color
+var allDivs = document.querySelectorAll("div");
+var i;
+for (i = 0; i < allDivs.length; i++) {
+  allDivs[i].style.backgroundColor = "red";
+}
+
+// Change all div to Pink color with forEach
+document
+  .querySelectorAll("div")
+  .forEach((d) => (d.style.backgroundColor = "pink"));
 
 // add mutiple class with a space in between
 $("h1").addClass("big-title padding-100");
