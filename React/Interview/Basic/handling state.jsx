@@ -15,7 +15,9 @@ function ClassRoom(props) {
 }
 
 // Convert it into a class component
-
+// We are using this.state to add the variable studentCount and setting the value to "0"
+// For reading the state, we are using this.state.studentCount
+// For updating the state, we need to first bind the addStudent function to this, then we will be use the setState function to update the state
 class ClassRoom extends React.Component {
   constructor(props) {
     super(props);
