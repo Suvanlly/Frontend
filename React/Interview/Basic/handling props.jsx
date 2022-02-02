@@ -26,7 +26,7 @@ class StudentInfo extends React.Component {
   }
 }
 
-// Passing props between Parent to Child Component
+// -------------------------Passing props from Parent to Child Component--------------------------------
 // Parent Component
 import ChildComponent from "./Child";
 function ParentComponent(props) {
@@ -46,3 +46,37 @@ function ParentComponent(props) {
 export default ParentComponent;
 
 // Child Component
+function ChildComponent(props) {
+  return (
+    <div>
+      <p>Value of counter: {props.counterValue}</p>
+      {/* We use props.counterValue to display the data passed on by the parent component */}
+    </div>
+  );
+}
+
+// -------------------------Passing props from Child to Parent Component--------------------------------
+
+// Create a callback in parent component, pass the callback as a prop
+function ParentComponent(props) {
+  let [counter, setCounter] = useState(0);
+  let callback = (valueFromChild) => setCounter(valueFromChild);
+  return (
+    <div>
+      <p>Value of counter: {counter}</p>
+      <ChildComponent callbackFunc={callback} counterValue={counter} />
+    </div>
+  );
+}
+
+// Pass data from the child to the parent component
+function ChildComponent(props) {
+  let childCounterValue = props.counterValue;
+  return (
+    <div>
+      <button onClick={() => props.callbackFunc(++childCounterValue)}>
+        Increment Counter
+      </button>
+    </div>
+  );
+}
