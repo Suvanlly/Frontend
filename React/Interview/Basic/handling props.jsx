@@ -25,3 +25,24 @@ class StudentInfo extends React.Component {
     );
   }
 }
+
+// Passing props between Parent to Child Component
+// Parent Component
+import ChildComponent from "./Child";
+function ParentComponent(props) {
+  let [counter, setCounter] = useState(0);
+
+  let increment = () => setCounter(++counter);
+
+  return (
+    <div>
+      <button onClick={increment}>Increment Counter</button>
+      <ChildComponent counterValue={counter} />
+      {/* Providing a prop called counterValue, the value pf counter is being passed from parent to the child compoennt */}
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+// Child Component
