@@ -46,11 +46,11 @@ function ParentComponent(props) {
 export default ParentComponent;
 
 // Child Component
-function ChildComponent(props) {
+function ChildComponent({ counterValue }) {
   return (
     <div>
-      <p>Value of counter: {props.counterValue}</p>
-      {/* We use props.counterValue to display the data passed on by the parent component */}
+      <p>Value of counter: {counterValue}</p>
+      {/* We use counterValue to display the data passed on by the parent component */}
     </div>
   );
 }
