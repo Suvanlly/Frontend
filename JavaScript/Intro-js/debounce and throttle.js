@@ -51,3 +51,16 @@ let div1 = document.getElementById('div')
 div1.addEventListener('drag', throttle(function(e) {
   console.log(e.offsetX, e.offsetY)
 }, 100))
+
+/*
+解释：如果timer存在，那就直接返回，不再往下执行了。这样就实现了一段时间内执行一次的目的。
+
+相同点：
+都可以通过使用 setTimeout 实现
+目的都是，降低回调函数的执行频率，节省计算资源
+
+不同点：
+函数防抖，是在一段连续操作结束之后，处理回调，利用 clearTimout 和 setTimeout 实现。函数节流，是在一段连续操作中，
+每一段时间只执行一次，在频率较高的事件中使用来提高性能。
+函数防抖关注一段时间内连续触发，只在最后一次执行；而函数节流侧重于在一段时间内只执行一次。
+*/
