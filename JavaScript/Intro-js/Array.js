@@ -5,3 +5,6 @@ var arr = new Array(); //注意Array()的A要大写
 
 // 2. 利用数组字面量创建
 var arr = [];
+var arr1 = [1, 2, 'pink', true]
+console.log(arr1[0]) //1
+console.log(arr1[4]) //undefined
