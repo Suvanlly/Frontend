@@ -1,0 +1,7 @@
+// Array数组 创建数组两种方式？
+
+// 1.
+var arr = new Array(); //注意Array()的A要大写
+
+// 2. 利用数组字面量创建
+var arr = [];
