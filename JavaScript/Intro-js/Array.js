@@ -8,3 +8,9 @@ var arr = [];
 var arr1 = [1, 2, 'pink', true]
 console.log(arr1[0]) //1
 console.log(arr1[4]) //undefined
+
+// 3.遍历数组
+var cars = ['BMW', 'MAZDA', 'TOYOTA'];
+for (i = 0; i < cars.length; i++) {
+  console.log(cars[i])
+}
