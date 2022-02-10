@@ -1,8 +1,7 @@
 function unique(arr) {
   var newArr = [];
   for (var i = 0; i < arr.length; i++) {
-     // if there is no such element, it will return -1, 
-     // and that element will be added to newArray
+     // if there is no such element, indexof arr[i] will return -1, usually it will the first occured number's index 
     if (newArr.indexOf(arr[i]) === -1) {
         newArr.push(arr[i]);
     }
